@@ -9,9 +9,9 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-data/
-artifacts/
-checkpoints/
+/data/
+/artifacts/
+/checkpoints/
 *.pt
 *.pth
 *.onnx
@@ -21,3 +21,5 @@ checkpoints/
 *.log
 gradio_cached_examples/
 .gradio/
+results/**/cache/
+results/**/predictions/
