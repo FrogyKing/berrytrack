@@ -1,0 +1,40 @@
+{
+  "sequence": "butom-st21-235",
+  "variant": "berrytrack",
+  "seed": 42,
+  "source": "https://doi.org/10.60507/FK2/TTPCNV",
+  "license": "CC-BY-4.0",
+  "creators": [
+    "Michael Halstead",
+    "Esra Guclu",
+    "Mohamed Farag",
+    "Enrico Pallotta",
+    "Christian Hund",
+    "Ribana Roscher",
+    "Maren Bennewitz",
+    "Juergen Gall",
+    "Chris McCool"
+  ],
+  "modifications": "Cropped original images, resized and overlaid GT and predicted boxes",
+  "interpretation": "Observed failures from an oracle-box development diagnostic",
+  "events": [
+    {
+      "frame": 16,
+      "gt_id": 2350121,
+      "previous_id": 35,
+      "new_id": 46,
+      "previous_frame": 14,
+      "source_previous_ns": "1631267458962607384",
+      "source_current_ns": "1631267459096039772"
+    },
+    {
+      "frame": 17,
+      "gt_id": 2350117,
+      "previous_id": 18,
+      "new_id": 51,
+      "previous_frame": 15,
+      "source_previous_ns": "1631267459029323101",
+      "source_current_ns": "1631267459162753820"
+    }
+  ]
+}
