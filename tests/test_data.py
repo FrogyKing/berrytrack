@@ -12,7 +12,7 @@ from berrytrack.data.annotation import create_annotation_task, export_verified_t
 from berrytrack.data.download import download, extract_archive, file_digest, safe_archive_path
 from berrytrack.data.loaders import grouped_split
 from berrytrack.data.mot import read_mot, validate_splits, write_mot
-from berrytrack.data.public import ArrayUnpickler
+from berrytrack.data.public import ArrayUnpickler, verify_manifest_files
 
 
 def test_mot_round_trip_and_missing_gt(tmp_path):
@@ -92,3 +92,19 @@ def test_unpickler_allows_numpy_legacy_array():
     array = np.arange(4)
     payload = pickle.dumps(array, protocol=4)
     assert np.array_equal(ArrayUnpickler(io.BytesIO(payload)).load(), array)
+
+
+def test_mot_six_column_confidence_is_explicitly_one(tmp_path):
+    path = tmp_path / "gt.txt"
+    path.write_text("1,1,1,1,5,5\n")
+    assert read_mot(path)[0, 6] == 1
+
+
+def test_cached_data_digest_rejects_corruption(tmp_path):
+    path = tmp_path / "frame.jpg"
+    path.write_bytes(b"valid bytes")
+    entries = [{"path": "frame.jpg", "sha256": file_digest(path)}]
+    verify_manifest_files(tmp_path, entries)
+    path.write_bytes(b"corrupted")
+    with pytest.raises(ValueError, match="integrity failure"):
+        verify_manifest_files(tmp_path, entries)

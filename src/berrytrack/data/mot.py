@@ -29,7 +29,10 @@ def read_mot(path: str | Path) -> NDArray[np.float64]:
     if (rows[:, 4:6] <= 0).any():
         raise ValueError("MOT boxes must have positive width and height")
     if rows.shape[1] < 10:
+        missing_confidence = rows.shape[1] == 6
         rows = np.pad(rows, ((0, 0), (0, 10 - rows.shape[1])), constant_values=-1)
+        if missing_confidence:
+            rows[:, 6] = 1.0
     return rows[np.argsort(rows[:, 0], kind="stable")]
 
 

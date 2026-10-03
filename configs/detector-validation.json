@@ -1,0 +1,1 @@
+{"dataset": "blueberrydcm-yolo", "experiment": "blueberry-smoke", "weights": "/models/blueberry-smoke/weights/best.pt", "image_size": 640}

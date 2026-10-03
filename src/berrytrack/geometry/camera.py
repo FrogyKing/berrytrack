@@ -56,6 +56,7 @@ class CameraMotion:
         if matrix is None or inliers is None or not np.isfinite(matrix).all():
             result.reason = "invalid RANSAC transform"
             return result
+        matrix = np.asarray(matrix, dtype=np.float64)
         valid = inliers.ravel().astype(bool)
         n = int(valid.sum())
         fraction = n / len(good)
@@ -70,7 +71,7 @@ class CameraMotion:
         if residual > 2.5 or np.linalg.norm(matrix[:, 2]) > 0.35 * max(gray.shape):
             result.reason = "excessive residual or displacement"
             return result
-        matrix[:, 2] /= ratio
+        matrix[:, 2] = matrix[:, 2] / ratio
         return CameraEstimate(
             matrix.astype(np.float32),
             fraction * min(1.0, coverage * 4),
