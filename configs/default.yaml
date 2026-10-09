@@ -1,0 +1,24 @@
+name: berrytrack-development
+seed: 42
+split: val
+image_size: 640
+detection_threshold: 0.1
+tracker:
+  algorithm: berrytrack
+  high_threshold: 0.5
+  low_threshold: 0.1
+  match_threshold: 0.72
+  min_hits: 2
+  max_age: 30
+  memory_age: 120
+  embedding_dim: 64
+  appearance: true
+  motion: true
+  camera_compensation: true
+  context: true
+  adaptive: true
+  uncertainty_trigger: true
+  neighbor_k: 4
+  gate_distance: 6.0
+  ambiguity_margin: 0.12
+  seed: 42
