@@ -1,5 +1,13 @@
 # Visual asset attribution
 
+`tracking-demo.gif` is a three-second, reduced-resolution derivative of the real
+BUTom-ST21 sequence235 demo. It displays BerryTrack and BoT-SORT outputs side by
+side from identical reference detections, with persistent IDs, trajectories and
+confirmed unique-ID counts. Frames were encoded as H.264 and then an animated GIF.
+It is a software demonstration with remaining identity errors, not detector
+performance or a raw dataset redistribution. The same author attribution, DOI
+and CC-BY-4.0 license below apply.
+
 `identity-switches.png` is a derived visualization of BUTom-ST21 sequence 235.
 The source dataset is by **Michael Halstead, Esra Guclu, Mohamed Farag, Enrico
 Pallotta, Christian Hund, Ribana Roscher, Maren Bennewitz, Juergen Gall, and Chris

@@ -59,6 +59,31 @@ image-level random splits cannot establish independence and must be labeled
 exploratory. Do not tune on sequence 235 or call subset results an official full
 benchmark. Cache detections once and share the exact cache among all trackers.
 
+### BlueberryDCM source-format discrepancy
+
+Inspection of the downloaded release found that its TXT files contain only
+class0 (10,981 boxes) and class3 (6,974 boxes), although the VIA JSON distinguishes
+all four categories. VIA totals are 4,026 Unblue_visible, 6,861 Unblue_occluded,
+1,682 Blue_visible and 5,285 Blue_occluded (17,854 boxes). TXT totals17,955.
+Thus both category mapping and total annotation counts differ by source format.
+The project preserves the original files and documents the discrepancy; it does
+not silently treat TXT as a faithful four-class export.
+
+`scripts/prepare_detector.py` reconstructs four classes and normalized rectangles
+from VIA attributes. Its fixed development subset uses32 train,21 validation and
+21 reserved test images, with the remaining66 train candidates omitted to keep
+the initial job small. The test images were not evaluated. Capture groups are
+unknown, so this is an image-level pipeline experiment with possible plant leakage.
+Ultralytics additionally rejects duplicated labels during its own validation.
+The raw `YoloDetectionDataset` loader reads publisher TXT as supplied; it does not
+claim to repair class semantics. Use the VIA-derived split for corrected training.
+
+Cached source reuse verifies previously recorded SHA256 values for RGB and all
+BlueberryDCM image/annotation files. A changed file fails closed. An older
+image-only manifest is upgraded by re-extracting the publisher-checksummed archive.
+Preparing a different detection split into a populated output is rejected, so
+stale training files cannot silently defeat the declared split size.
+
 ## Human identity workflow for blueberry recordings
 
 1. Select a short licensed recording; reserve entire recordings as development,
