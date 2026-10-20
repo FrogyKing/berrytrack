@@ -18,6 +18,11 @@ tracker:
   context: true
   adaptive: true
   uncertainty_trigger: true
+  static_scene: false
+  local_rigidity: true
+  rigidity_weight: 0.35
+  rigidity_neighbors: 6
+  rigidity_gate: 4.0
   neighbor_k: 4
   gate_distance: 6.0
   ambiguity_margin: 0.12
