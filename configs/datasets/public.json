@@ -28,9 +28,15 @@
   "agrivision": {
     "paper": "https://www.nature.com/articles/s41597-025-06263-3",
     "shared_record": "https://figshare.com/s/8f843d7b91a4711210dc",
-    "data_license_as_displayed": "CC BY",
+    "data_license_as_displayed": "CC-BY-4.0",
     "has_verified_temporal_ids": false,
-    "download_status": "deferred_88GB"
+    "download_status": "bounded_DB2_contiguous_subsets_downloaded",
+    "article_api": "https://api.figshare.com/v2/articles/29222462/versions/1",
+    "db2_file_id": 55546409,
+    "db2_archive_size_bytes": 78036031533,
+    "db2_publisher_md5": "172c20f85985d52c2e769e78a1dcc4bf",
+    "whole_archive_digest_verified": false,
+    "reference_label_kind": "exploratory_visual_review_not_human_verified"
   },
   "nestcount": {
     "release": "v1",
