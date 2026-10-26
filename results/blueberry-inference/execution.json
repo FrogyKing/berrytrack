@@ -1,0 +1,757 @@
+{
+  "scope": "Real-video execution only: full-scene GT unavailable; preliminary detector domain shift; no accuracy claim",
+  "source_fps": null,
+  "playback_fps": 10,
+  "runs": [
+    {
+      "source_range": "1-24",
+      "source_manifest": {
+        "dataset": "AgriVision DB-2",
+        "article_id": 29222462,
+        "version": 1,
+        "doi": "10.6084/m9.figshare.29222462.v1",
+        "metadata_api": "https://api.figshare.com/v2/articles/29222462/versions/1",
+        "license": {
+          "value": 52,
+          "name": "CC BY",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "authors": [
+          "Muhammad Owais",
+          "Muhammad Shafay",
+          "Muhammad Zubair",
+          "Shamal Mohammed",
+          "lakmal seneviratne",
+          "Irfan Hussain"
+        ],
+        "archive_url": "https://ndownloader.figshare.com/files/55546409",
+        "archive_size": 78036031533,
+        "publisher_archive_md5": "172c20f85985d52c2e769e78a1dcc4bf",
+        "whole_archive_md5_verified": false,
+        "integrity": "TLS HTTP206 ranges; per-member ZIP CRC32; extracted SHA256",
+        "camera": 1,
+        "video": 1,
+        "first_source_frame": 1,
+        "frame_count": 24,
+        "contiguous_source_indices": true,
+        "source_fps": null,
+        "playback_fps": 10,
+        "timing_note": "Playback FPS chosen; capture FPS unknown",
+        "persistent_temporal_identities": false,
+        "tracking_ground_truth": "unavailable",
+        "http_bytes_downloaded": 54330482,
+        "http_range_requests": 148,
+        "frames": [
+          {
+            "frame": 1,
+            "source_frame": 1,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_1.jpg",
+            "sha256": "a6ab26024f5e74c44ec22601a61335522fa4d170d3ef4464e63465c831021a2e",
+            "zip_crc32_verified": "5438f457",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_1.png",
+              "sha256": "9862b7b6f7d9129c52517b3a7d6c46dd5222a9b940450d29ad8402790fbd887c",
+              "zip_crc32_verified": "3df50286",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 2,
+            "source_frame": 2,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_2.jpg",
+            "sha256": "de77f0ad23c08b17faf34ccc5ce7a2d50b53573d23d89057c2544efe47f083d7",
+            "zip_crc32_verified": "c7e51dea",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_2.png",
+              "sha256": "fed12172dd00e56953c26e632f8c1cddd2f26c6cf959720c7c2017e114e5a2e7",
+              "zip_crc32_verified": "4a97833a",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 3,
+            "source_frame": 3,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_3.jpg",
+            "sha256": "a9e8f07aef3d015e6bd1e019a1363568e10cef01f0d574df12f13102314e3cb8",
+            "zip_crc32_verified": "9bc32d80",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_3.png",
+              "sha256": "e4db5d8aceff84a3608cb9fa7db1f56bbd115e70611691f31ec0c9a77356980a",
+              "zip_crc32_verified": "25bc5d03",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 4,
+            "source_frame": 4,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_4.jpg",
+            "sha256": "2b3732f604a946221b04b409a3af929347372b478fb6511df007ed2390ab58ed",
+            "zip_crc32_verified": "749545e3",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_4.png",
+              "sha256": "04d2a46eaad6356611061ece1cacf5d1e1a1dad5c99bc017fdba2e8718859c9f",
+              "zip_crc32_verified": "d6a6fc09",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 5,
+            "source_frame": 5,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_5.jpg",
+            "sha256": "bf8cbc0856bb6bc5025fefe350c0f5b2139f5ed312c6045e685c23927dd6758c",
+            "zip_crc32_verified": "582bc0cb",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_5.png",
+              "sha256": "699c5c886c1ce9de16a2da55a68911a367b4dd24f72276350c88ae7e9aff98b6",
+              "zip_crc32_verified": "44863628",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 6,
+            "source_frame": 6,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_6.jpg",
+            "sha256": "3380943db33565bfc02070a465a11d5983706292819921dd8cbb3508a1e1252d",
+            "zip_crc32_verified": "61b933a0",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_6.png",
+              "sha256": "6b728511b931439de2ea068ac06500abda64a085586c113c3c23d92aee379542",
+              "zip_crc32_verified": "f706d974",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 7,
+            "source_frame": 7,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_7.jpg",
+            "sha256": "99947c1fb318799d45cd8151635ddd702a55dc55ef4d1149b3140b3459090c4d",
+            "zip_crc32_verified": "b832a966",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_7.png",
+              "sha256": "8e539977e71ba4b0e69fa3eb74be714133c677587932006a6ef0142cf273917d",
+              "zip_crc32_verified": "fdf62fa0",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 8,
+            "source_frame": 8,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_8.jpg",
+            "sha256": "2409a2213e8fa6d928d050c8dd0ed683ed5ccea6b8bdf58f1c63f51c7ffde80a",
+            "zip_crc32_verified": "aa62c88f",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_8.png",
+              "sha256": "c89134ae4d2c202d4511621ad6249c540925e534a613cb4975cbd2d86da188b6",
+              "zip_crc32_verified": "c0c7b52b",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 9,
+            "source_frame": 9,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_9.jpg",
+            "sha256": "16701f63f6ae6db79fb3f6b2a4b8444d6515a0fab532db219f2490ec6e2bb3fc",
+            "zip_crc32_verified": "bdb5a005",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_9.png",
+              "sha256": "a0ea750dc7020a67ee3baf161d7bdd3436d9ba418ab06a5ceba2a192db5b62af",
+              "zip_crc32_verified": "c52cf19b",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 10,
+            "source_frame": 10,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_10.jpg",
+            "sha256": "b71e495fc0ac18214d5fa723e3d804f3be722ce3a571f915ceb7549103fcc293",
+            "zip_crc32_verified": "3690bbe6",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_10.png",
+              "sha256": "76b4599aa15cba124bae257f1b007ea49f589fa6b50bc259b613975abae664f6",
+              "zip_crc32_verified": "6a873a8b",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 11,
+            "source_frame": 11,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_11.jpg",
+            "sha256": "3e7cb59b89ffcfeccf349a3ff7f1a69f1d8a8290f65b472a7a8cd6c047b6a828",
+            "zip_crc32_verified": "cca0b0f1",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_11.png",
+              "sha256": "d4cb1e5d398c2c6a070ec3798d67e60da225182fc6c7f5aca1deb01437ed49ce",
+              "zip_crc32_verified": "6b7ce3a6",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 12,
+            "source_frame": 12,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_12.jpg",
+            "sha256": "47e6ec5b5fd3d61c5d0a9fbc6560bd44c80d7efd27978998cd4dbbeeda158637",
+            "zip_crc32_verified": "2ee47ca7",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_12.png",
+              "sha256": "de37ea79bfc40b866fb07be84076b8b9a46b74b50a8e85c3b7728687481c806c",
+              "zip_crc32_verified": "b595eb7d",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 13,
+            "source_frame": 13,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_13.jpg",
+            "sha256": "e435b521903f6753fb91b49b8334cd8f36c9156ad2ed07d3296c955cafb33fee",
+            "zip_crc32_verified": "b2cb7fe5",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_13.png",
+              "sha256": "02bb8c0edf6171f977d5a9bbb2026a384970d883a2609d3e6b0a22db81246752",
+              "zip_crc32_verified": "92a7baa0",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 14,
+            "source_frame": 14,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_14.jpg",
+            "sha256": "0593f8737f8c9c6f6ef817d8c995bfeab9fe63e580762309b86caccfd34f3279",
+            "zip_crc32_verified": "63e32618",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_14.png",
+              "sha256": "7f8b76895b31c22b214a420ac4573badc180bd58781788899716f70ae0c48316",
+              "zip_crc32_verified": "1ac07444",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 15,
+            "source_frame": 15,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_15.jpg",
+            "sha256": "f24b7937cd2e327525806f6c0ea97e00b06f765e6a8b2e4c8544454ef4f6a21d",
+            "zip_crc32_verified": "258ca2ab",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_15.png",
+              "sha256": "bdfff31e18357166a1e113dcd4d5e4b98193dce98eb80eb68def0f77342dda49",
+              "zip_crc32_verified": "38c21815",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 16,
+            "source_frame": 16,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_16.jpg",
+            "sha256": "5d53ab23d3106e81fd671920b3c873884a2de3f6641e4f3c67fc1761f0021ef1",
+            "zip_crc32_verified": "8097d613",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_16.png",
+              "sha256": "a4ac251875047a77f4cd552e1056331e140901be460081c96a65c9713923ff5c",
+              "zip_crc32_verified": "20d4940b",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 17,
+            "source_frame": 17,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_17.jpg",
+            "sha256": "36f242ce41c7e99a861c96801a9722b5adcfca4d970623b00a3c003bb93a44b4",
+            "zip_crc32_verified": "85ad4089",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_17.png",
+              "sha256": "6a52078a2cd89f0c894ebc15bcd22a71cae3f9ef55de3315ab53feb1d0ec2571",
+              "zip_crc32_verified": "64299a42",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 18,
+            "source_frame": 18,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_18.jpg",
+            "sha256": "c1e94120f472c9a173457a49732f823b577e3d356b37ddda2d663c71e289165e",
+            "zip_crc32_verified": "477065be",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_18.png",
+              "sha256": "ae1d1e3ec7e2aef3948918a6809c75fef09dea2fd3c1dfeebeabc2e670d981a7",
+              "zip_crc32_verified": "44eb3566",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 19,
+            "source_frame": 19,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_19.jpg",
+            "sha256": "6bf4184ff57dd5c067c6ff99d50d92d0429b82c6cce697e1908836eafbf8f267",
+            "zip_crc32_verified": "04fc3ec4",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_19.png",
+              "sha256": "1969c8fd5281c91b6b05009266be033cdf6e656eec274e8aad666a527fa3c65b",
+              "zip_crc32_verified": "cf1bfdb2",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 20,
+            "source_frame": 20,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_20.jpg",
+            "sha256": "2b0db4fc1e0530e1cfe5a19f238488f88a33c574a8a94c6c8576d59d4dc05b12",
+            "zip_crc32_verified": "c848638a",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_20.png",
+              "sha256": "adbc15cc23c05107123f910a295eb2ebdf55c5e980806558f72b85b4fe80c356",
+              "zip_crc32_verified": "5b4be420",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 21,
+            "source_frame": 21,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_21.jpg",
+            "sha256": "53f94b2754e5148e9fd2156b474ab2aefa887a4b0a0a1c907cd226e475bfb116",
+            "zip_crc32_verified": "429a2b18",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_21.png",
+              "sha256": "9c6e56e939f378d87a49aa147f105acf184111405dacaea7673935b5a9e1e01b",
+              "zip_crc32_verified": "3f4f11c7",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 22,
+            "source_frame": 22,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_22.jpg",
+            "sha256": "4e0aae88a2fb363bd4609cdfc1b162ffc9a03acda41a8fbf528ada7d5f3dfafe",
+            "zip_crc32_verified": "bd481a99",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_22.png",
+              "sha256": "ae42ab20b5dde93a9b3aae5adbf49cbb80f052d15edda4465f212a585f7bcc52",
+              "zip_crc32_verified": "b56984cf",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 23,
+            "source_frame": 23,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_23.jpg",
+            "sha256": "ff6c7c8c49cb420d15f37cdf9e800e4f96cebc48951542c3ecdcf341d40ca4d9",
+            "zip_crc32_verified": "6179c4ce",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_23.png",
+              "sha256": "6eaf9c2bf4bc5608581df2bd8671fcb4e8fc787f793de645aa95c0c3c92d7fb9",
+              "zip_crc32_verified": "6c5eff25",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          },
+          {
+            "frame": 24,
+            "source_frame": 24,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_24.jpg",
+            "sha256": "ce3f6f6c6be4f10c4b4c9897a5104399f3f113613a54770a9190895d83095359",
+            "zip_crc32_verified": "cc033bd4",
+            "width": 1920,
+            "height": 1080,
+            "pseudo_mask": {
+              "source_member": "DB-2/Camera 1/Videos_Frames_Masks/Camera 1 Video (1)_24.png",
+              "sha256": "c95bf9e81b9b0eb5e677993923199e5d8b5c833ea5f36f1b227e2957beacc689",
+              "zip_crc32_verified": "21f4b785",
+              "label_kind": "publisher_inferred_segmentation_not_tracking_gt"
+            }
+          }
+        ]
+      },
+      "inference": {
+        "video": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\full-scene\\annotated.mp4",
+        "frames": 24,
+        "source": "detector predictions",
+        "execution_mode": "local CPU",
+        "truncated": true,
+        "results": [
+          {
+            "algorithm": "berrytrack",
+            "mot": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\full-scene\\berrytrack.txt",
+            "frames": 24,
+            "detection_seconds": 1.9487776000314625,
+            "association_seconds": 0.5312056999828201,
+            "elapsed_seconds": 3.703139600009308,
+            "unique_count": 1,
+            "appearance_crops": 1,
+            "metadata": {
+              "algorithm": "berrytrack",
+              "device": "cpu"
+            },
+            "association_ms": 22.133570832617504,
+            "end_to_end_ms": 154.29748333372117,
+            "video_fps": 6.480987106167878
+          },
+          {
+            "algorithm": "botsort",
+            "mot": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\full-scene\\botsort.txt",
+            "frames": 24,
+            "detection_seconds": 1.9487776000314625,
+            "association_seconds": 0.31774600004428066,
+            "elapsed_seconds": 3.703139600009308,
+            "unique_count": 1,
+            "appearance_crops": 0,
+            "metadata": {
+              "algorithm": "botsort",
+              "device": "cpu"
+            },
+            "association_ms": 13.239416668511694,
+            "end_to_end_ms": 154.29748333372117,
+            "video_fps": 6.480987106167878
+          }
+        ],
+        "statistics_scope": "wall includes decode, shared detector, trackers, render; excludes export transcode",
+        "statistics": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\full-scene\\statistics.json"
+      }
+    },
+    {
+      "source_range": "91-114",
+      "source_manifest": {
+        "dataset": "AgriVision DB-2",
+        "article_id": 29222462,
+        "version": 1,
+        "doi": "10.6084/m9.figshare.29222462.v1",
+        "metadata_api": "https://api.figshare.com/v2/articles/29222462/versions/1",
+        "license": {
+          "value": 52,
+          "name": "CC BY",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "authors": [
+          "Muhammad Owais",
+          "Muhammad Shafay",
+          "Muhammad Zubair",
+          "Shamal Mohammed",
+          "lakmal seneviratne",
+          "Irfan Hussain"
+        ],
+        "archive_url": "https://ndownloader.figshare.com/files/55546409",
+        "archive_size": 78036031533,
+        "publisher_archive_md5": "172c20f85985d52c2e769e78a1dcc4bf",
+        "whole_archive_md5_verified": false,
+        "integrity": "TLS HTTP206 ranges; per-member ZIP CRC32; extracted SHA256",
+        "camera": 1,
+        "video": 1,
+        "first_source_frame": 91,
+        "frame_count": 24,
+        "contiguous_source_indices": true,
+        "source_fps": null,
+        "playback_fps": 10,
+        "timing_note": "Playback FPS chosen; capture FPS unknown",
+        "persistent_temporal_identities": false,
+        "tracking_ground_truth": "unavailable",
+        "http_bytes_downloaded": 55420196,
+        "http_range_requests": 52,
+        "frames": [
+          {
+            "frame": 1,
+            "source_frame": 91,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_91.jpg",
+            "sha256": "8b8ec6e54ee34f3fbbc96e722cbab96bdcf13e7ac243df8655549058260a9eac",
+            "zip_crc32_verified": "9b4a1a38",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 2,
+            "source_frame": 92,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_92.jpg",
+            "sha256": "1326634df3c7401cb958a20b7ccccfb086a3f647e215073e581ea7512e95428f",
+            "zip_crc32_verified": "b38427ac",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 3,
+            "source_frame": 93,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_93.jpg",
+            "sha256": "7c0a9ddab72604baa6a4a06014e342a1c9f60b466a85a3d838024aa249a07108",
+            "zip_crc32_verified": "29fdde8e",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 4,
+            "source_frame": 94,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_94.jpg",
+            "sha256": "595919ee799ed0b7d2499e5a85439a26a2661b88b19e841f4b58c839584a223c",
+            "zip_crc32_verified": "7d4016e2",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 5,
+            "source_frame": 95,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_95.jpg",
+            "sha256": "99e728f1c0821c37d684e7a055e5a4ddb90e964f678d3d79f7e154720d5abe86",
+            "zip_crc32_verified": "c1384333",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 6,
+            "source_frame": 96,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_96.jpg",
+            "sha256": "cc401fb3018674974d9b7eb388f5f271d13fb2b12aa5b3dde5ac85714b447941",
+            "zip_crc32_verified": "12aa6fdc",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 7,
+            "source_frame": 97,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_97.jpg",
+            "sha256": "6b30fcb180672838c604718ab31a3dc1f8ff06943a2a868aa476ad50388ed930",
+            "zip_crc32_verified": "6edcb2d4",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 8,
+            "source_frame": 98,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_98.jpg",
+            "sha256": "0d114f2c1c522fbfecf9489b1e4a34a549fd02405c2065f09d3976d456bfbc06",
+            "zip_crc32_verified": "e69f1709",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 9,
+            "source_frame": 99,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_99.jpg",
+            "sha256": "89e00e7a3133263bc3845d82b6ffdcc200db00f9792cb7298265552e00235dc1",
+            "zip_crc32_verified": "c64f4a4b",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 10,
+            "source_frame": 100,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_100.jpg",
+            "sha256": "57099557bb0eb7dded5a2c1ae42239c0c70623550501a9de47b029f2fdb241d5",
+            "zip_crc32_verified": "5933a6bb",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 11,
+            "source_frame": 101,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_101.jpg",
+            "sha256": "30f47d0f313274c31a5e738e0790996ab7bb1597b564abd5d860e59e48aa33d4",
+            "zip_crc32_verified": "72f99b37",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 12,
+            "source_frame": 102,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_102.jpg",
+            "sha256": "37a0fb3f122ca85095ddcbfc26ea5227a5803d6da5d91ffdee3b2175c0b502ff",
+            "zip_crc32_verified": "a4089a96",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 13,
+            "source_frame": 103,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_103.jpg",
+            "sha256": "c68cd2104c470f54e90ce3907280e0a77ac1d861f956c21297dfcd3b9c32f05c",
+            "zip_crc32_verified": "409bf285",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 14,
+            "source_frame": 104,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_104.jpg",
+            "sha256": "bbd3f69b7506b6860115c085be6b4b567da2e99172827442095641fd7c84aea2",
+            "zip_crc32_verified": "14d52a99",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 15,
+            "source_frame": 105,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_105.jpg",
+            "sha256": "43e8f16739de9fa73728943f74fa739775d0e2c91d8ab4d621352cdeb9bf73d1",
+            "zip_crc32_verified": "5eb46049",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 16,
+            "source_frame": 106,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_106.jpg",
+            "sha256": "9df04f5d6bfa9c56b8c8c78b93627530910e44a4c9f629386a41eb03ff9934d4",
+            "zip_crc32_verified": "fac92c54",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 17,
+            "source_frame": 107,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_107.jpg",
+            "sha256": "ebec8c01c203f969568e20c75f18810ca0a63e6635886d427517cbe355eda2b5",
+            "zip_crc32_verified": "a070ee37",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 18,
+            "source_frame": 108,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_108.jpg",
+            "sha256": "96dc4cd6806583d73eeb10d94f8c7207b7fcfd59f3a5139694a39dc24838e7cc",
+            "zip_crc32_verified": "f762405e",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 19,
+            "source_frame": 109,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_109.jpg",
+            "sha256": "01c701dbe2d1a85d8bb450cc9bb19a9736cdd19163ea1d6b17d8a7c84a51d28f",
+            "zip_crc32_verified": "2e39d566",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 20,
+            "source_frame": 110,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_110.jpg",
+            "sha256": "fabdb5d8ee1a404885f1861c903ec1836720cb554e93f55e41ab09dc1e8ac20f",
+            "zip_crc32_verified": "04e9ec0a",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 21,
+            "source_frame": 111,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_111.jpg",
+            "sha256": "76705bd0b5c5eb568fc74a922cc7ce96cddd26619b21083824f8c47f8505263f",
+            "zip_crc32_verified": "45f838f8",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 22,
+            "source_frame": 112,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_112.jpg",
+            "sha256": "27a64e2a28fdd204894e821f7e96b823aa6b80a46329d0ed7b4946a6b9929d1c",
+            "zip_crc32_verified": "a3b36a62",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 23,
+            "source_frame": 113,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_113.jpg",
+            "sha256": "9451d9376c94d64e23954a815f82ebb64cf0250742321516f7b70b653d23872a",
+            "zip_crc32_verified": "bff602f2",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "frame": 24,
+            "source_frame": 114,
+            "source_member": "DB-2/Camera 1/Videos_Frames/Camera 1 Video (1)_114.jpg",
+            "sha256": "d42439ffd5502be6e0a22dd2ffb33535a60f8a01e5db0f8d9026a4649a2d482e",
+            "zip_crc32_verified": "20120930",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "inference": {
+        "video": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\later-comparison\\annotated.mp4",
+        "frames": 24,
+        "source": "detector predictions",
+        "execution_mode": "local CPU",
+        "truncated": true,
+        "results": [
+          {
+            "algorithm": "berrytrack",
+            "mot": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\later-comparison\\berrytrack.txt",
+            "frames": 24,
+            "detection_seconds": 2.1267887000431074,
+            "association_seconds": 0.6139573999826098,
+            "elapsed_seconds": 3.996065399987856,
+            "unique_count": 3,
+            "appearance_crops": 22,
+            "metadata": {
+              "algorithm": "berrytrack",
+              "device": "cpu"
+            },
+            "association_ms": 25.58155833260874,
+            "end_to_end_ms": 166.502724999494,
+            "video_fps": 6.0059077111382955
+          },
+          {
+            "algorithm": "botsort",
+            "mot": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\later-comparison\\botsort.txt",
+            "frames": 24,
+            "detection_seconds": 2.1267887000431074,
+            "association_seconds": 0.35013579997757915,
+            "elapsed_seconds": 3.996065399987856,
+            "unique_count": 3,
+            "appearance_crops": 0,
+            "metadata": {
+              "algorithm": "botsort",
+              "device": "cpu"
+            },
+            "association_ms": 14.588991665732465,
+            "end_to_end_ms": 166.502724999494,
+            "video_fps": 6.0059077111382955
+          }
+        ],
+        "statistics_scope": "wall includes decode, shared detector, trackers, render; excludes export transcode",
+        "statistics": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\artifacts\\agrivision\\later-comparison\\statistics.json"
+      }
+    }
+  ]
+}
