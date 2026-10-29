@@ -1,5 +1,9 @@
 # Local video application
 
+For the new real-blueberry video and visually inspected reference crop, use
+[the AgriVision commands](agrivision.md). The current BerryTrack default includes
+local deformable polygons. Experimental residual-velocity damping stays off.
+
 Launch with `uv run berrytrack demo` and open http://127.0.0.1:7860.
 The interface runs on localhost, with one queued task at a time, without a public
 share link or GPU endpoint. CLI inference uses the same pipeline.

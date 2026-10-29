@@ -3,7 +3,7 @@
 After preparing an official sequence, run the CPU association diagnostic:
 
 ```powershell
-uv run python -m berrytrack.evaluation.benchmark --sequence data/processed/butom-st21-235 --oracle --ablations --dimensions 32 64 128 --seeds 42 --output artifacts/diagnostic
+uv run python -m berrytrack.evaluation.benchmark --sequence data/processed/butom-st21-235 --oracle --legacy --ablations --dimensions 32 64 128 --seeds 42 --output artifacts/diagnostic
 ```
 
 The `--oracle` flag copies human-corrected bounding boxes, discards their IDs,
