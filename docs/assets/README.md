@@ -1,5 +1,16 @@
 # Visual asset attribution
 
+`blueberry-demo.gif`, `.mp4` and `.png` show **BerryTrack only** on the eight-frame
+AgriVision ROI described below. All eight frames are retained, including initial
+track confirmation. The renderer runs the default tracker with visually inspected
+reference boxes, removes reference identities before tracking, and draws actual
+predicted boxes and IDs. No comparison panels or benchmark scores are shown.
+Modifications: source crop resized2x, prediction overlays, titles and4FPS playback.
+Original capture FPS is unknown. These are software-demo media, not detector
+accuracy evidence. [Manifest](blueberry-demo.json) records input/prediction/frame
+hashes and configuration. Reproduce with `uv run scripts/make_blueberry_demo.py`.
+The AgriVision authors, DOI and CC-BY-4.0 attribution below apply to these media.
+
 `agrivision-reference.jpg` shows eight real AgriVision DB-2 crops with 56 boxes
 and 7 identities authored by exploratory visual inspection. This is a tiny,
 near-stationary exploratory reference, not human-verified or independent GT.

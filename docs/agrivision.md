@@ -1,5 +1,18 @@
 # Real blueberry video and explicit reference labels
 
+The README's [GIF](assets/blueberry-demo.gif) and [MP4](assets/blueberry-demo.mp4)
+show BerryTrack alone on the reference crop. After preparing the sequence, run:
+
+```powershell
+uv run scripts/make_blueberry_demo.py --sequence data/processed/agrivision-visual-reference-reproduced
+```
+
+The renderer removes reference IDs before tracking, retains all eight frames,
+and exports its configuration and source hashes in a [manifest](assets/blueberry-demo.json).
+It uses4FPS for presentation; original capture FPS is unknown. Reference boxes are
+visually inspected, so the GIF demonstrates software execution rather than detector
+quality or comparative accuracy.
+
 Source: [AgriVision DB-2 v1](https://doi.org/10.6084/m9.figshare.29222462.v1),
 [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12748667/).
 The dataset's Figshare metadata declares CC-BY-4.0; the article has separate terms.
