@@ -10,6 +10,19 @@ from pathlib import Path
 from berrytrack.detection.training import via_labels
 
 
+def public_metadata(value):
+    """Publish experiment provenance without workstation accounting records."""
+    if isinstance(value, dict):
+        return {
+            ("job" if key == "reservation" else key): public_metadata(item)
+            for key, item in value.items()
+            if not key.endswith("_usd") and key not in {"billing_note", "cost_scope"}
+        }
+    if isinstance(value, list):
+        return [public_metadata(item) for item in value]
+    return value
+
+
 def collect() -> None:
     output = Path("results/cloud")
     output.mkdir(parents=True, exist_ok=True)
@@ -42,18 +55,9 @@ def collect() -> None:
         records.append(entry)
     summary = {
         "collected_utc": datetime.now(UTC).isoformat(),
-        "hard_budget_usd": 30,
-        "total_reserved_usd": sum(r["reserved_usd"] for r in ledger["runs"]),
-        "sum_successful_runtime_estimate_usd": sum(
-            r.get("result", {}).get("estimated_runtime_usd", 0) for r in records
-        ),
-        "cost_scope": (
-            "runtime estimates exclude build/startup; reservation conservatively includes "
-            "allowance; see provider billing"
-        ),
         "runs": records,
     }
-    (output / "runs.json").write_text(json.dumps(summary, indent=2))
+    (output / "runs.json").write_text(json.dumps(public_metadata(summary), indent=2))
     detector = Path("results/detection")
     detector.mkdir(parents=True, exist_ok=True)
     shutil.copy2("artifacts/detector-via-results.csv", detector / "training.csv")
@@ -95,8 +99,6 @@ def collect() -> None:
             "domain-shift diagnostic only"
         )
         Path("results/detector-transfer/detector.json").write_text(json.dumps(transfer, indent=2))
-    if Path("artifacts/billing-final.json").exists():
-        shutil.copy2("artifacts/billing-final.json", output / "provider-billing.json")
 
 
 if __name__ == "__main__":

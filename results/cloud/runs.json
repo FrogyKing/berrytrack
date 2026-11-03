@@ -1,39 +1,32 @@
 {
   "collected_utc": "2026-11-08T01:50:31.770075+00:00",
-  "hard_budget_usd": 30,
-  "total_reserved_usd": 2.30131,
-  "sum_successful_runtime_estimate_usd": 0.07901999999999998,
-  "cost_scope": "runtime estimates exclude build/startup; reservation conservatively includes allowance; see provider billing",
   "runs": [
     {
-      "reservation": {
+      "job": {
         "run_id": "18ec39dca3d24698b817712be13befef",
         "kind": "smoke",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794100949.0812147
       },
       "status": "failed_before_result"
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "9a5ab213aa044676b0e749262733880a",
         "kind": "smoke",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794100963.0187037
       },
       "status": "failed_before_result"
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "0ba6d83773d146329f7273a7ea326baa",
         "kind": "smoke",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794101101.9089
       },
       "status": "completed",
@@ -47,19 +40,15 @@
         "kind": "smoke",
         "gpu": "Tesla T4",
         "runtime_seconds": 1.043162841000001,
-        "peak_gpu_memory_bytes": 1263616,
-        "reserved_usd": 0.200136,
-        "estimated_runtime_usd": 0.0006239999999999996,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 1263616
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "0af26172a3664e8889516c2e016fdd93",
         "kind": "train-encoder",
         "gpu": "T4",
         "timeout_seconds": 180,
-        "reserved_usd": 0.212613,
         "created_unix": 1794101156.002061
       },
       "status": "completed",
@@ -113,30 +102,25 @@
         "resume_semantics": "weights, optimizer, step and RNG restored; data iterator restarts",
         "run_id": "0af26172a3664e8889516c2e016fdd93",
         "kind": "train-encoder",
-        "gpu": "Tesla T4",
-        "reserved_usd": 0.212613,
-        "estimated_runtime_usd": 0.006654,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "gpu": "Tesla T4"
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "67d1770b8bdb4c12b16c2650438189ae",
         "kind": "train-detector",
         "gpu": "T4",
         "timeout_seconds": 300,
-        "reserved_usd": 0.237566,
         "created_unix": 1794101263.4623954
       },
       "status": "failed_before_result"
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "1b5c990a4ea845a7af2e98b381e6eddd",
         "kind": "train-detector",
         "gpu": "T4",
         "timeout_seconds": 300,
-        "reserved_usd": 0.237566,
         "created_unix": 1794101314.074115
       },
       "status": "completed",
@@ -148,10 +132,7 @@
         "kind": "train-detector",
         "gpu": "Tesla T4",
         "runtime_seconds": 245.995846585,
-        "peak_gpu_memory_bytes": 1311838720,
-        "reserved_usd": 0.237566,
-        "estimated_runtime_usd": 0.05136199999999999,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 1311838720
       },
       "interpretation": "Excluded initial pilot: publisher TXT collapsed class taxonomy. Training time option overrode requested3 epochs;105 CSV epoch records within the hard allocation. Corrected VIA training is a separate run.",
       "source_snapshot_sha256": {
@@ -197,12 +178,11 @@
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "d096303eca3d4298bb4686b075912800",
         "kind": "train-encoder",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794101659.8610413
       },
       "status": "completed",
@@ -261,10 +241,7 @@
         "resume_semantics": "weights, optimizer, step and RNG restored; data iterator restarts",
         "run_id": "d096303eca3d4298bb4686b075912800",
         "kind": "train-encoder",
-        "gpu": "Tesla T4",
-        "reserved_usd": 0.200136,
-        "estimated_runtime_usd": 0.0016639999999999988,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "gpu": "Tesla T4"
       },
       "source_snapshot_sha256": {
         "__init__.py": "738f8d74e7c71ddd288bd24d52181456a00e983206ad21d1181ee265ad9d58e8",
@@ -310,12 +287,11 @@
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "928d124f8b0f47baa0f4e8ac2c00d00b",
         "kind": "infer-encoder",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794101684.611077
       },
       "status": "completed",
@@ -327,10 +303,7 @@
         "kind": "infer-encoder",
         "gpu": "Tesla T4",
         "runtime_seconds": 6.901020862,
-        "peak_gpu_memory_bytes": 1824768,
-        "reserved_usd": 0.200136,
-        "estimated_runtime_usd": 0.0016639999999999988,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 1824768
       },
       "source_snapshot_sha256": {
         "__init__.py": "738f8d74e7c71ddd288bd24d52181456a00e983206ad21d1181ee265ad9d58e8",
@@ -376,12 +349,11 @@
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "3e42cf33752347d2ace6e73aadd78065",
         "kind": "infer-detector",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794101707.7304275
       },
       "status": "completed",
@@ -399,10 +371,7 @@
         "kind": "infer-detector",
         "gpu": "Tesla T4",
         "runtime_seconds": 6.200426355,
-        "peak_gpu_memory_bytes": 139187200,
-        "reserved_usd": 0.200136,
-        "estimated_runtime_usd": 0.0016639999999999988,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 139187200
       },
       "interpretation": "Excluded initial pilot: publisher TXT collapsed class taxonomy. Training time option overrode requested3 epochs;105 CSV epoch records within the hard allocation. Corrected VIA training is a separate run.",
       "source_snapshot_sha256": {
@@ -449,12 +418,11 @@
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "24bcc78b265b47ed956e3b693ae43f46",
         "kind": "train-detector",
         "gpu": "T4",
         "timeout_seconds": 180,
-        "reserved_usd": 0.212613,
         "created_unix": 1794101808.219553
       },
       "status": "completed",
@@ -466,10 +434,7 @@
         "kind": "train-detector",
         "gpu": "Tesla T4",
         "runtime_seconds": 64.958915337,
-        "peak_gpu_memory_bytes": 1405896704,
-        "reserved_usd": 0.212613,
-        "estimated_runtime_usd": 0.013724,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 1405896704
       },
       "source_snapshot_sha256": {
         "__init__.py": "738f8d74e7c71ddd288bd24d52181456a00e983206ad21d1181ee265ad9d58e8",
@@ -515,12 +480,11 @@
       }
     },
     {
-      "reservation": {
+      "job": {
         "run_id": "2ee180eead9043dda24612700ef2263b",
         "kind": "infer-detector",
         "gpu": "T4",
         "timeout_seconds": 120,
-        "reserved_usd": 0.200136,
         "created_unix": 1794101935.9496548
       },
       "status": "completed",
@@ -538,10 +502,7 @@
         "kind": "infer-detector",
         "gpu": "Tesla T4",
         "runtime_seconds": 6.183350143,
-        "peak_gpu_memory_bytes": 138728448,
-        "reserved_usd": 0.200136,
-        "estimated_runtime_usd": 0.0016639999999999988,
-        "billing_note": "approximate runtime estimate excludes build/startup; reservation includes allowance"
+        "peak_gpu_memory_bytes": 138728448
       },
       "source_snapshot_sha256": {
         "__init__.py": "738f8d74e7c71ddd288bd24d52181456a00e983206ad21d1181ee265ad9d58e8",

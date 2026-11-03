@@ -17,7 +17,7 @@ and omit `--oracle`. Save detector weights hash, inference settings, training
 split and detector metrics alongside that cache. Do not use GT-derived boxes for
 detector metrics. The runner produces full configurations, hashes, predictions,
 TrackEval metrics, CSV, Markdown and a comparison plot. GPU training and inference
-are separate, explicitly budgeted commands documented in the main README.
+use separate commands documented in [the Modal guide](../docs/modal.md).
 
 Seven cumulative ablations are included. The final `uncertainty` variant is
 identical to the full BerryTrack configuration; this duplicate makes the ladder

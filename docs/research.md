@@ -200,7 +200,7 @@ assignment with dummy columns is dense and has cubic worst-case scaling. Candida
 gating reduces admissible matches but does not yet make matrix allocation sparse.
 The Python reference implementation prioritizes inspectability over extreme density.
 
-Detector quality, association quality, pipeline timing and cloud billing are
+Detector quality, association quality and pipeline timing are
 separate measurements. Reference-box diagnostics remove the detector but remain
 sensitive to localization, confirmation and occlusion policies. A single clip
 cannot establish H1–H4 or agricultural generalization. See [the executed evaluation](evaluation.md)
@@ -210,4 +210,4 @@ Future tests must reserve whole recordings before annotation, use identical cach
 detector outputs, select models on development/validation data, and evaluate the
 final untouched test recordings once. Report all seeds, failures, detector AP,
 HOTA/DetA/AssA, IDF1, switches/fragments, sequence count MAE/RMSE, timing, memory,
-parameters and cost. Human-verified blueberry identity annotations remain required.
+and parameter count. Human-verified blueberry identity annotations remain required.
