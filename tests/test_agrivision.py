@@ -1,14 +1,32 @@
 import io
 import zipfile
 
+import numpy as np
 import pytest
 
 from berrytrack.data.agrivision import (
     RangeReader,
+    mask_component_boxes,
     prepare_agrivision,
     prepare_visual_reference,
     select_frames,
 )
+
+
+def test_mask_proposals_preserve_merged_regions_instead_of_inventing_fruit_instances():
+    mask = np.zeros((40, 50), np.uint8)
+    mask[2:12, 3:13] = 255
+    mask[6:16, 10:20] = 255  # Touching fruit are one inferred connected region.
+    mask[22:32, 30:40] = 255
+    mask[38, 48] = 255  # Isolated segmentation speck is below minimum area.
+    boxes = mask_component_boxes(mask)
+    np.testing.assert_array_equal(boxes, [[3, 2, 20, 16], [30, 22, 40, 32]])
+
+
+def test_mask_proposals_reject_color_masks_and_handle_empty_foreground():
+    assert mask_component_boxes(np.zeros((30, 30), np.uint8)).shape == (0, 4)
+    with pytest.raises(ValueError, match="2D mask"):
+        mask_component_boxes(np.zeros((30, 30, 3), np.uint8))
 
 
 def test_range_reader_handles_zip_seeking_and_crc():

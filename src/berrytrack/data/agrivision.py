@@ -47,6 +47,26 @@ REFERENCE_BOXES_XYXY = (
 )
 
 
+def mask_component_boxes(mask, minimum_area: int = 80, maximum_area: int = 30_000):
+    """Turn publisher binary masks into class-agnostic box proposals, never IDs.
+
+    Touching segmented fruit remain one connected proposal. These inferred masks
+    cannot establish instance counts or independent tracking ground truth.
+    """
+    import cv2
+    import numpy as np
+
+    mask = np.asarray(mask)
+    if mask.ndim != 2 or minimum_area < 1 or maximum_area < minimum_area:
+        raise ValueError("Expected a 2D mask and positive, ordered area limits")
+    _, _, stats, _ = cv2.connectedComponentsWithStats((mask > 0).astype(np.uint8), connectivity=8)
+    boxes = []
+    for x, y, width, height, area in stats[1:]:
+        if minimum_area <= area <= maximum_area:
+            boxes.append([x, y, x + width, y + height])
+    return np.asarray(boxes, dtype=np.float32).reshape(-1, 4)
+
+
 class RangeReader(io.RawIOBase):
     """Seekable ZIP source which refuses servers that ignore HTTP Range.
 
