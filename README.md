@@ -24,9 +24,10 @@ visually inspected reference labels](docs/agrivision.md) are now reproducible.
 
 [![BerryTrack tracking real blueberry frames](docs/assets/blueberry-demo.gif)](docs/assets/blueberry-demo.mp4)
 
-**BerryTrack on real blueberry frames.** Persistent IDs on an AgriVision crop,
-using visually inspected reference boxes with their identities removed before
-tracking. This is a software demo, not detector accuracy or a comparison claim.
+**16 seconds of real blueberry tracking.** A moving camera, 160 consecutive
+AgriVision frames and 48-frame trajectory trails from BerryTrack's actual outputs.
+Inputs are box proposals from publisher-inferred masks; this qualitative demo
+does not establish detector accuracy or a physical-fruit count.
 [Watch the MP4](docs/assets/blueberry-demo.mp4) ·
 [Source, labels and reproduction](docs/agrivision.md).
 
@@ -115,17 +116,19 @@ class so classifier changes cannot force new identities.
 
 [Application controls, exports and verification](docs/demo.md).
 
-Recreate the single-tracker blueberry GIF from the prepared AgriVision reference:
+Recreate the long single-tracker blueberry GIF and H.264 video:
 
 ```powershell
-uv run scripts/make_blueberry_demo.py --sequence data/processed/agrivision-visual-reference-reproduced
+uv run scripts/prepare_blueberry_demo.py
+uv run scripts/make_blueberry_demo.py
 ```
 
-Prepare the reference with [the AgriVision workflow](docs/agrivision.md).
-The renderer runs BerryTrack on reference boxes with IDs removed and uses its
-actual predicted boxes and IDs. All eight frames are retained, including initial
-track confirmation. Playback is4FPS; source capture FPS is unknown. Downloaded
-datasets and model weights stay outside Git.
+The renderer runs BerryTrack on component boxes extracted from inferred masks,
+without temporal IDs. The MP4 contains all 160 frames at 10 FPS; the GIF samples
+every second frame at 5 FPS for the same 16-second duration. The fixed full-frame
+view preserves real camera motion. Trails show up to 48 previous frame positions
+and break across missing observations. Source capture FPS is unknown. Downloaded
+datasets and model weights stay outside Git. [Source details](docs/agrivision.md).
 
 Normal inference and optional appearance alternatives:
 
