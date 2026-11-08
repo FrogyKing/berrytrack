@@ -9,7 +9,7 @@ The shipped default enables `local_rigidity` with fixed weight 0.35 and leaves
 experimental residual-velocity damping (`static_scene`) off. Camera estimation,
 appearance, uncertainty and the other association settings are unchanged in
 the paired legacy/polygon comparison. No detector/encoder was retrained for this
-extension and no additional GPU budget was spent.
+extension; the comparison runs on CPU.
 
 ## Protocol and executed evidence
 
