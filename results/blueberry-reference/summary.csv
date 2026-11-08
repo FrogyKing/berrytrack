@@ -1,0 +1,7 @@
+sequence,variant,algorithm,seed,HOTA,DetA,AssA,IDF1,MOTA,identity_switches,fragmentations,gt_unique_count,pred_unique_count,count_mae,count_rmse,association_ms,tracking_fps,appearance_crops
+agrivision-c1-v1-assistant-roi,legacy,berrytrack,42,87.5,87.5,87.5,93.33333333333333,87.5,0,0,7,7,0.0,0.0,4.299933333337928,232.56174514308705,19
+agrivision-c1-v1-assistant-roi,polygon,berrytrack,42,87.5,87.5,87.5,93.33333333333333,87.5,0,0,7,7,0.0,0.0,6.144699999519314,162.74187512461597,19
+agrivision-c1-v1-assistant-roi,static_polygon_experimental,berrytrack,42,87.5,87.5,87.5,93.33333333333333,87.5,0,0,7,7,0.0,0.0,5.85763333462334,170.7174114311992,7
+agrivision-c1-v1-assistant-roi,bytetrack,bytetrack,42,100.0,100.0,100.0,100.0,100.0,0,0,7,7,0.0,0.0,0.37823333210932714,2643.8706351532055,0
+agrivision-c1-v1-assistant-roi,botsort,botsort,42,100.0,100.0,100.0,100.0,100.0,0,0,7,7,0.0,0.0,2.0128999991963306,496.7956681401259,0
+agrivision-c1-v1-assistant-roi,deepsort,deepsort,42,87.5,87.5,87.5,93.33333333333333,87.5,0,0,7,7,0.0,0.0,2.203766668875081,453.7685473346654,56

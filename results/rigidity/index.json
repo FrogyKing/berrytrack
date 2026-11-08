@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "modes": {
+    "oracle": {
+      "completed_runs": 42,
+      "sources": [
+        {
+          "sequence": "butom-st21-235",
+          "mode": "oracle",
+          "frames": 63,
+          "detections": 1880,
+          "root": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\data\\processed\\butom-st21-235",
+          "input_source_sha256": "67edee6b18d5a0c9a9f1c791c243951746cc962972d42f70c0af7a99bbf6a3e8",
+          "detections_sha256": "7fc4e3d787a519d7abafd203bbdb1aa7529c2e348703393565df21b4a149193e",
+          "ground_truth_sha256": "67edee6b18d5a0c9a9f1c791c243951746cc962972d42f70c0af7a99bbf6a3e8",
+          "seqinfo_sha256": "afd87cb0228cc61df553b95e93a69938a883376e3a0dfe36cc8f99d325bd6ead",
+          "manifest_sha256": "c96fde9d2a33492d9d4d6a6bd3d3aae362041d0f9911014ad177c29860334180",
+          "detector_provenance": null
+        },
+        {
+          "sequence": "butom-st21-205",
+          "mode": "oracle",
+          "frames": 63,
+          "detections": 1658,
+          "root": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\data\\processed\\butom-st21-205",
+          "input_source_sha256": "f8ccbc50f2a2843e39c7e1ccc48c1ade3a0312e7b8ab0aa1a4874c2a496e3c2d",
+          "detections_sha256": "178194fb314981f5cfbccc14b0d41a67d39d9c6b6c95a1d3d46e78e82d239163",
+          "ground_truth_sha256": "f8ccbc50f2a2843e39c7e1ccc48c1ade3a0312e7b8ab0aa1a4874c2a496e3c2d",
+          "seqinfo_sha256": "0449c13c2f3179e478b1dfea352bc7851a28501c4604b80bf3d0fe9e209307f4",
+          "manifest_sha256": "d4b5e0ae460b5952ff8aa7fd0ad3e141e7ae48344ae7f1a5134cde55b60b47fa",
+          "detector_provenance": null
+        }
+      ]
+    },
+    "cached": {
+      "completed_runs": 21,
+      "sources": [
+        {
+          "sequence": "butom-st21-235",
+          "mode": "cached",
+          "frames": 63,
+          "detections": 1964,
+          "root": "C:\\Users\\luisg\\Documents\\repos\\FrogyKing\\berrytrack\\data\\processed\\butom-st21-235",
+          "input_source_sha256": "c4dfcea54a0b3ac19cd390e329a0ef313d7d6be01f89204ec4760806fb797490",
+          "detections_sha256": "c4dfcea54a0b3ac19cd390e329a0ef313d7d6be01f89204ec4760806fb797490",
+          "ground_truth_sha256": "67edee6b18d5a0c9a9f1c791c243951746cc962972d42f70c0af7a99bbf6a3e8",
+          "seqinfo_sha256": "afd87cb0228cc61df553b95e93a69938a883376e3a0dfe36cc8f99d325bd6ead",
+          "manifest_sha256": "c96fde9d2a33492d9d4d6a6bd3d3aae362041d0f9911014ad177c29860334180",
+          "detector_provenance": {
+            "sequence": "butom-st21-235",
+            "frames": 63,
+            "detector": "checkpoints/blueberry-via/best.pt",
+            "image_size": 640,
+            "threshold": 0.1,
+            "device": "cpu",
+            "detections": 1964,
+            "mean_detection_ms": 60.68979682643816,
+            "source": "detector predictions; not ground truth",
+            "cache_sha256": "c4dfcea54a0b3ac19cd390e329a0ef313d7d6be01f89204ec4760806fb797490"
+          }
+        }
+      ]
+    }
+  },
+  "pending": [
+    {
+      "sequence": "butom-st21-205",
+      "mode": "cached",
+      "status": "pending",
+      "reason": "No actual detector cache is available; no detections fabricated"
+    }
+  ]
+}

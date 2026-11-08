@@ -1,0 +1,1344 @@
+{
+  "metadata": {
+    "executed_at": "2026-11-08T02:18:44.481214+00:00",
+    "experiment": "tiny_assistant_reviewed_blueberry_roi",
+    "oracle_detections": true,
+    "interpretation": "EXPLORATORY EXECUTION CHECK ONLY. Eight near-stationary real blueberry ROI frames with seven identities authored by assistant visual inspection. Reference boxes are also tracker inputs with IDs removed. No independent human-verified GT, full-scene count, detector accuracy or H1-H4 evidence.",
+    "annotation_kind": "assistant_visual_review",
+    "human_verified": false,
+    "independent_benchmark": false,
+    "reference_provenance": {
+      "dataset": "AgriVision DB-2 tiny assistant-reviewed ROI",
+      "version": 1,
+      "source_sequence_root": "data\\processed\\agrivision-camera1-video1",
+      "source_doi": "10.6084/m9.figshare.29222462.v1",
+      "label_kind": "assistant_visual_review",
+      "annotation_kind": "assistant_visual_review",
+      "human_verified": false,
+      "independent_benchmark": false,
+      "tracking_ground_truth": "assistant_reference_only",
+      "evaluation_frames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "roi_xyxy": [
+        640,
+        710,
+        900,
+        970
+      ],
+      "source_fps": null,
+      "playback_fps": 10,
+      "license": "CC-BY-4.0",
+      "annotated_reference_identities": 7,
+      "scope": "All seven sufficiently visible fruit instances in this ROI; not full scene",
+      "protocol": "Boxes and IDs authored by assistant visual review of eight consecutive frames; unchanged reviewed boxes retained for near-stationary fruit; no tracker output",
+      "limitations": [
+        "Not human verified or independent ground truth; estimated +/-5px localization",
+        "Near-stationary easy crop, no occlusion transitions/reentry; not H1-H4 evidence",
+        "ID6 partly leaf occluded; visibility values are uncertain visual estimates",
+        "Capture FPS unknown; seqinfo10FPS is chosen playback only"
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "source_frame": 1,
+          "source_sha256": "a6ab26024f5e74c44ec22601a61335522fa4d170d3ef4464e63465c831021a2e",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "source_frame": 2,
+          "source_sha256": "de77f0ad23c08b17faf34ccc5ce7a2d50b53573d23d89057c2544efe47f083d7",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "source_frame": 3,
+          "source_sha256": "a9e8f07aef3d015e6bd1e019a1363568e10cef01f0d574df12f13102314e3cb8",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "source_frame": 4,
+          "source_sha256": "2b3732f604a946221b04b409a3af929347372b478fb6511df007ed2390ab58ed",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "source_frame": 5,
+          "source_sha256": "bf8cbc0856bb6bc5025fefe350c0f5b2139f5ed312c6045e685c23927dd6758c",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "source_frame": 6,
+          "source_sha256": "3380943db33565bfc02070a465a11d5983706292819921dd8cbb3508a1e1252d",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 7,
+          "source_frame": 7,
+          "source_sha256": "99947c1fb318799d45cd8151635ddd702a55dc55ef4d1149b3140b3459090c4d",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        },
+        {
+          "frame": 8,
+          "source_frame": 8,
+          "source_sha256": "2409a2213e8fa6d928d050c8dd0ed683ed5ccea6b8bdf58f1c63f51c7ffde80a",
+          "visually_reviewed": true,
+          "objects": [
+            {
+              "track_id": 1,
+              "bbox_xywh": [
+                33,
+                6,
+                37,
+                39
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 2,
+              "bbox_xywh": [
+                8,
+                30,
+                47,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 3,
+              "bbox_xywh": [
+                23,
+                80,
+                47,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 4,
+              "bbox_xywh": [
+                76,
+                158,
+                53,
+                44
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 5,
+              "bbox_xywh": [
+                102,
+                173,
+                59,
+                55
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 6,
+              "bbox_xywh": [
+                153,
+                172,
+                47,
+                48
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "partly_leaf_occluded",
+              "localization_uncertainty_pixels": 5
+            },
+            {
+              "track_id": 7,
+              "bbox_xywh": [
+                186,
+                162,
+                48,
+                51
+              ],
+              "label_kind": "assistant_visual_review",
+              "occlusion": "clear_or_minor_overlap",
+              "localization_uncertainty_pixels": 5
+            }
+          ]
+        }
+      ]
+    },
+    "source_manifest_sha256": "5923bf4115388aa1d9d1655daf76892f0b72d9df1a3c5e0937282de9fa710d93",
+    "reference_sha256": "aff934aa4d02a7d2afd446e97326a5a786e59ff0ad0348fc616c48de665aa133",
+    "detections_sha256": "556ef2fcf76758ecf71cc3d73bf718fdaae493b104db8bf6ebd712269af1d569",
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+      "opencv_threads": "1",
+      "berrytrack": "0.1.0",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "torch": "2.15.0",
+      "ultralytics": "8.4.207",
+      "trackeval": "1.3.0",
+      "deep-sort-realtime": "1.3.2"
+    },
+    "implementation": {
+      "git_revision": "9470b8cf7a6a09004b5874cbc0a5c38288553e2c",
+      "source_sha256": {
+        "__init__.py": "738f8d74e7c71ddd288bd24d52181456a00e983206ad21d1181ee265ad9d58e8",
+        "association/__init__.py": "2f5fc43305eafef400c39b3c0109f6ffd1157b573a156bea584298ecc29b3bb1",
+        "association/cost.py": "084b0d02f630e614bc39405537eb979793d9d4aa06f964e548dd0119ab79ff00",
+        "cli.py": "57e3069bec910c3e35ee42f0f9cf7f36633f034c4e73a8e6e80b6d3c2e9410a1",
+        "config.py": "7403fef3fe93e8e4db5ac4bd18dc3068b4d3548e80c8c7129625b20ac9c59fb7",
+        "data/__init__.py": "ff6b7dcdb109fc676a57c836f7ed878c8f3705973b73d52da736cbd4b55fbffb",
+        "data/agrivision.py": "42f9a1a928820226cfc291212ad0b76e26a8f108cda13ae01a620495bc14d15e",
+        "data/annotation.py": "848072f3bc18a04b1ab842bb3006b618b420b31aae6e894e7d32f98bc47dfe6d",
+        "data/download.py": "2b4c27ab98cc9d61de9a25c58c0fa19c82b1cd330cb5265a431597f831bb1adb",
+        "data/loaders.py": "32ac1a13ace075c853db682fd36922f5514f4bbc515bb6b653efb6afc395a80c",
+        "data/mot.py": "a371f9836cef8fccce58dc489f1d017df337819a2f1d64cb8161547f74c7b5bf",
+        "data/public.py": "71d5000abe687146059fd93cac06100f6f8a371d83fadaaa5dbeb821795f1499",
+        "demo.py": "a72a6cdfcacf28c3fe65c882158b50f4541a8f51371f029b219eb6fd828746cb",
+        "detection/__init__.py": "a117045c477bbe1b8bab70d759fd164e307abf1c13d14bde9828be42d663f863",
+        "detection/cache.py": "fc0f9d6569462e6d11c6e3cdaf10f9c7a0c7a8c90abd12676e54c0aa472225fb",
+        "detection/training.py": "10a93ea246f84c255d557e0b460b552ad812436ea8833195324cfa9643095c2e",
+        "detection/yolo.py": "8658536872fab41082caf0378fbe1c3a69305fb33d643e4a198626204da1ac81",
+        "embeddings/__init__.py": "56fb11c07a73018947080c58952f3cf843a52f38e91cce1e8acb03d0919f0898",
+        "embeddings/appearance.py": "c72a7a2f32a0372227875b5944b068d9df5f646332d805fcc9a49060065b8793",
+        "embeddings/context.py": "a1dfcbd9148a8b5e2544d7e2590a41947249645192e46c75c8f39d6b1bd2afee",
+        "embeddings/model.py": "a2ccb331638fe066a26132c6cfa454e2c13167236c9d1b52c9f0badadd75a6d2",
+        "embeddings/training.py": "bcf6d77f0ea4210a812d17bd8f31a45bd2773eb2ee93b559b0645249ce761b17",
+        "evaluation/__init__.py": "c555e8c17e1f2d8beeaa81247803b135d87b15bace834e2c68fd60f14f59fc72",
+        "evaluation/benchmark.py": "7a3ea60b0f115e21f016e5fd38f69ac560a949b5a5ccb1584cda3b158b9db6e9",
+        "evaluation/metrics.py": "65b781b9a153a5479425a660129f4929898429dc5ba7062152e84099f698184c",
+        "evaluation/qualitative.py": "56358c072a3558a86141fc84ecc946c857efe569f429e76527a17cc80def1d13",
+        "geometry/__init__.py": "cb2dba32026f4e209414aa5ac63cf4eebecb9b6b96aecfa1f845864f327b270a",
+        "geometry/boxes.py": "fa0e7087cc188a572c895564428bb8dd2f0609a5cd2164433bda7a164caa6901",
+        "geometry/camera.py": "3df2e99d54ce072af71fa00a687dc2b6d470fe70bd0005c004024cbb3c0077d9",
+        "geometry/rigidity.py": "c9a4c2a8892dae40b23e698b66a55421f3b8483829ab5edbc625b6f52da8a6a6",
+        "infrastructure/__init__.py": "2743165a500ba1722f16eca238492ece1f72ef3a867c24b55a12544b37c370d5",
+        "infrastructure/budget.py": "d64108b322fd339bb849efb4b5667711bfb5987df6e21aa8c4311b6fd2d4b472",
+        "infrastructure/launch.py": "8d11d86ce1628a02d3331d18bac3d950ac8f1c143377869422988349d98d6885",
+        "infrastructure/modal_app.py": "3361ee4f09a8aeedc05738bf3e2cfd6e8def5b99b76f0b9756856762e1130fb8",
+        "logging.py": "799e53f8bfea3336b1b3a6a630ff2270e082cd977990fe1987d05f57d3ccc00d",
+        "pipeline.py": "a7229e243f8b40281c3bbeaaa9ec4dc8ede015bc1332ac88109ecd3cfea527d0",
+        "tracking/__init__.py": "9476f035970bbe91e13adddebcfa3809e0bfb585463a692809b37914e0748daa",
+        "tracking/baselines.py": "c036193244d86d7696b5531b666437dbf5f5f6d786ae71ba47b0c7eeb7aaa83e",
+        "tracking/berry.py": "5894b209b89b56d329a97db0832abc67b1ade1abf4d14363d58d36cd66c4ad55",
+        "tracking/kalman.py": "f8b3af903f55d6fa03f573eaa59b8d1ac11aa08549147c116fb476eb070c7d79",
+        "types.py": "95bbb867aa4c1289e312e11c3061ce40521e0718842a60726e6ae4a42fc52e9f",
+        "visualization/__init__.py": "8b03d3ff5077c3b4255edcfcb46be1326c7dac7910299fc16cd0a4b559e57f8f",
+        "visualization/render.py": "a455298dd8ba261c6ee503394399477eabd2963a217377c414282a2ca7c9a646"
+      },
+      "uv_lock_sha256": "0a8bde54eada1ea14c3202b4903d1801ce94ced3cd15137292bb71883e175a50"
+    },
+    "source_fps": null,
+    "playback_fps": 10,
+    "timing_note": "8-frame timing is too small and initialization-sensitive for efficiency claims"
+  },
+  "results": [
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "berrytrack",
+      "seed": 42,
+      "config": {
+        "algorithm": "berrytrack",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": false,
+        "local_rigidity": false,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 4.299933333337928,
+      "association_all_frames_ms": 18.341962500926456,
+      "cold_first_frame_ms": 112.8037000016775,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        112.8037000016775,
+        6.758800009265542,
+        6.062000000383705,
+        4.007899988209829,
+        4.203500007861294,
+        4.276299994671717,
+        4.314100006013177,
+        4.309399999328889
+      ],
+      "association_p95_ms": 75.68798500433326,
+      "tracking_fps": 232.56174514308705,
+      "tracking_all_frames_fps": 54.519793067371594,
+      "pipeline_ms": 19.01625000027707,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 19,
+      "rigidity_fits": 0,
+      "rigidity_anchor_count": 0,
+      "metrics": {
+        "HOTA": 87.5,
+        "DetA": 87.5,
+        "AssA": 87.5,
+        "IDF1": 93.33333333333333,
+        "MOTA": 87.5,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 49,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.875,
+        "cumulative_count_rmse": 2.4748737341529163,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "9df9a8aeff3449ef91f1e20f28d474725f232ee9c36a0b3297c932a1dc4e9eb1",
+      "variant": "legacy"
+    },
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "berrytrack",
+      "seed": 42,
+      "config": {
+        "algorithm": "berrytrack",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": false,
+        "local_rigidity": true,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 6.144699999519314,
+      "association_all_frames_ms": 6.07299999865063,
+      "cold_first_frame_ms": 3.165699992678128,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        3.165699992678128,
+        6.927700000233017,
+        6.848999997600913,
+        6.332000004476868,
+        6.875499995658174,
+        6.374099990352988,
+        6.508799997391179,
+        5.551200010813773
+      ],
+      "association_p95_ms": 6.909429998631822,
+      "tracking_fps": 162.74187512461597,
+      "tracking_all_frames_fps": 164.66326366247188,
+      "pipeline_ms": 6.699424999169423,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 19,
+      "rigidity_fits": 42,
+      "rigidity_anchor_count": 42,
+      "metrics": {
+        "HOTA": 87.5,
+        "DetA": 87.5,
+        "AssA": 87.5,
+        "IDF1": 93.33333333333333,
+        "MOTA": 87.5,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 49,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.875,
+        "cumulative_count_rmse": 2.4748737341529163,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "9df9a8aeff3449ef91f1e20f28d474725f232ee9c36a0b3297c932a1dc4e9eb1",
+      "variant": "polygon"
+    },
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "berrytrack",
+      "seed": 42,
+      "config": {
+        "algorithm": "berrytrack",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": true,
+        "local_rigidity": true,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 5.85763333462334,
+      "association_all_frames_ms": 5.0988375005545095,
+      "cold_first_frame_ms": 2.988699998240918,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        2.988699998240918,
+        4.232999999658205,
+        5.559400000493042,
+        5.2509000088321045,
+        5.185799993341789,
+        5.899900002987124,
+        6.165300001157448,
+        5.507699999725446
+      ],
+      "association_p95_ms": 6.0724100017978335,
+      "tracking_fps": 170.7174114311992,
+      "tracking_all_frames_fps": 196.12313588955283,
+      "pipeline_ms": 5.680924999978743,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 7,
+      "rigidity_fits": 42,
+      "rigidity_anchor_count": 42,
+      "metrics": {
+        "HOTA": 87.5,
+        "DetA": 87.5,
+        "AssA": 87.5,
+        "IDF1": 93.33333333333333,
+        "MOTA": 87.5,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 49,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.875,
+        "cumulative_count_rmse": 2.4748737341529163,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "715aeacd225a285a0fc20d0449962dc9e1badf95654ed9407eb0ec907115ff90",
+      "variant": "static_polygon_experimental"
+    },
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "bytetrack",
+      "seed": 42,
+      "config": {
+        "algorithm": "bytetrack",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": false,
+        "local_rigidity": false,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 0.37823333210932714,
+      "association_all_frames_ms": 0.5970999991404824,
+      "cold_first_frame_ms": 1.8755000055534765,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        1.8755000055534765,
+        0.5777000042144209,
+        0.4061999934492633,
+        0.3915999986929819,
+        0.3910999948857352,
+        0.3806000022450462,
+        0.38159999530762434,
+        0.3724999987753108
+      ],
+      "association_p95_ms": 1.4212700050848064,
+      "tracking_fps": 2643.8706351532055,
+      "tracking_all_frames_fps": 1674.7613489189196,
+      "pipeline_ms": 1.0535000001254957,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 0,
+      "rigidity_fits": 0,
+      "rigidity_anchor_count": 0,
+      "metrics": {
+        "HOTA": 100.0,
+        "DetA": 100.0,
+        "AssA": 100.0,
+        "IDF1": 100.0,
+        "MOTA": 100.0,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 56,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.0,
+        "cumulative_count_rmse": 0.0,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "5a193f0aa7d908005e45ce6030a680ae9ae2bc17dfb10cde6eff72db09298c5a",
+      "variant": "bytetrack"
+    },
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "botsort",
+      "seed": 42,
+      "config": {
+        "algorithm": "botsort",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": false,
+        "local_rigidity": false,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 2.0128999991963306,
+      "association_all_frames_ms": 1.8692624998948304,
+      "cold_first_frame_ms": 0.6098000012570992,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        0.6098000012570992,
+        2.259399989270605,
+        2.0143000001553446,
+        2.041800005827099,
+        1.990100005059503,
+        1.9663999992189929,
+        2.012299999478273,
+        2.059999998891726
+      ],
+      "association_p95_ms": 2.1896099926379975,
+      "tracking_fps": 496.7956681401259,
+      "tracking_all_frames_fps": 534.970342611732,
+      "pipeline_ms": 2.288024999870686,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 0,
+      "rigidity_fits": 0,
+      "rigidity_anchor_count": 0,
+      "metrics": {
+        "HOTA": 100.0,
+        "DetA": 100.0,
+        "AssA": 100.0,
+        "IDF1": 100.0,
+        "MOTA": 100.0,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 56,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.0,
+        "cumulative_count_rmse": 0.0,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "e7f31581eb9ed60327a901324d903fa62f4d0093c8698497f8ed1c6cba99ffb4",
+      "variant": "botsort"
+    },
+    {
+      "sequence": "agrivision-c1-v1-assistant-roi",
+      "algorithm": "deepsort",
+      "seed": 42,
+      "config": {
+        "algorithm": "deepsort",
+        "high_threshold": 0.5,
+        "low_threshold": 0.1,
+        "match_threshold": 0.72,
+        "min_hits": 2,
+        "max_age": 30,
+        "memory_age": 120,
+        "embedding_dim": 64,
+        "appearance": true,
+        "motion": true,
+        "camera_compensation": true,
+        "context": true,
+        "adaptive": true,
+        "uncertainty_trigger": true,
+        "static_scene": false,
+        "local_rigidity": false,
+        "rigidity_weight": 0.35,
+        "rigidity_neighbors": 6,
+        "rigidity_gate": 4.0,
+        "neighbor_k": 4,
+        "gate_distance": 6.0,
+        "ambiguity_margin": 0.12,
+        "seed": 42
+      },
+      "frames": 8,
+      "association_ms": 2.203766668875081,
+      "association_all_frames_ms": 2.1828375010954915,
+      "cold_first_frame_ms": 1.3686000020243227,
+      "latency_warmup_frames_excluded": 5,
+      "per_frame_association_ms": [
+        1.3686000020243227,
+        1.6128999995999038,
+        3.1233000045176595,
+        2.496200002497062,
+        2.250399993499741,
+        1.9508999976096675,
+        1.9839000015053898,
+        2.6765000075101852
+      ],
+      "association_p95_ms": 2.966920005565043,
+      "tracking_fps": 453.7685473346654,
+      "tracking_all_frames_fps": 458.1193054902778,
+      "pipeline_ms": 2.713087500524125,
+      "pipeline_scope": "cached association + image decode + result collection; detector excluded",
+      "end_to_end_ms": null,
+      "peak_gpu_memory_bytes": null,
+      "model_parameter_count": 0,
+      "approximate_gpu_cost_usd": 0.0,
+      "appearance_crops": 56,
+      "rigidity_fits": 0,
+      "rigidity_anchor_count": 0,
+      "metrics": {
+        "HOTA": 87.5,
+        "DetA": 87.5,
+        "AssA": 87.5,
+        "IDF1": 93.33333333333333,
+        "MOTA": 87.5,
+        "identity_switches": 0,
+        "fragmentations": 0,
+        "true_positives": 49,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "gt_unique_count": 7,
+        "pred_unique_count": 7,
+        "count_error": 0,
+        "count_mae": 0.0,
+        "count_rmse": 0.0,
+        "cumulative_count_mae": 0.875,
+        "cumulative_count_rmse": 2.4748737341529163,
+        "evaluated_frames": 8,
+        "identity_switch_events": [],
+        "protocol": "TrackEval HOTA mean alpha=.05:.05:.95; CLEAR/Identity IoU>=.5; foreground only"
+      },
+      "prediction_sha256": "d4f20dc9ac33cdd6e3eaf0a94ee9ccec2f728c3200c3232416a5ad0e196c9f2e",
+      "variant": "deepsort"
+    }
+  ]
+}
