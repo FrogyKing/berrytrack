@@ -1,0 +1,14 @@
+{
+  "sequence": "butom-st21-235",
+  "frames": 63,
+  "detector": "checkpoints/blueberry-via/best.pt",
+  "image_size": 640,
+  "threshold": 0.1,
+  "device": "cpu",
+  "detections": 1964,
+  "mean_detection_ms": 60.68979682643816,
+  "source": "detector predictions; not ground truth",
+  "cache_sha256": "c4dfcea54a0b3ac19cd390e329a0ef313d7d6be01f89204ec4760806fb797490",
+  "weights_sha256": "b7812fc9004277b4a5814082c67a4f9ceccb115843efec2cde2aa17fe1a0e52f",
+  "scope": "Blueberry-trained detector transferred to tomato sequence235; domain-shift diagnostic only"
+}
