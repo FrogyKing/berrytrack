@@ -17,6 +17,7 @@ Data licenses do not become the software license:
   Four-class labels derive from VIA; format discrepancies are documented.
 - AgriVision's shared Figshare record displays CC BY. The article's publication
   license must not be substituted for the data terms.
+  The single-tracker blueberry demo retains attribution in [assets/README.md](assets/README.md).
 - NeSTCount's Zenodo record is CC-BY-4.0. Original images were not obtained or
   fabricated; the record directs users to request them from the authors.
 
