@@ -1,0 +1,45 @@
+{
+  "verified_date": "2026-11-07",
+  "blueberrydcm": {
+    "release": "v1",
+    "record": "14002517",
+    "license": "CC-BY-NC-4.0",
+    "url": "https://zenodo.org/api/records/14002517/files/BlueberryDCM.7z/content",
+    "size_bytes": 107267412,
+    "checksum": "md5:77fc808520dbe7751cb367dbd06ea32f",
+    "has_temporal_ids": false
+  },
+  "butom_st21": {
+    "release": "1.0",
+    "doi": "10.60507/FK2/TTPCNV",
+    "license": "CC-BY-4.0",
+    "annotations_url": "https://bonndata.uni-bonn.de/api/access/datafile/54921",
+    "annotations_size_bytes": 50518190,
+    "annotations_checksum": "md5:d7ef688a68e68ad43bbf69c154a0905c",
+    "rgb_first_part_url": "https://bonndata.uni-bonn.de/api/access/datafile/54924",
+    "rgb_first_part_size_bytes": 4294967296,
+    "rgb_full_part_checksum": "md5:b8c54c7b29e88365e3914e39083f452e",
+    "subset_sequences": ["235", "205"],
+    "subset_official_split": "eval",
+    "annotation_kind": "human_corrected",
+    "annotated_frames_per_sequence": 63,
+    "rgb_prefix_full_checksum_verified": false
+  },
+  "agrivision": {
+    "paper": "https://www.nature.com/articles/s41597-025-06263-3",
+    "shared_record": "https://figshare.com/s/8f843d7b91a4711210dc",
+    "data_license_as_displayed": "CC BY",
+    "has_verified_temporal_ids": false,
+    "download_status": "deferred_88GB"
+  },
+  "nestcount": {
+    "release": "v1",
+    "record": "21636487",
+    "license": "CC-BY-4.0",
+    "url": "https://zenodo.org/api/records/21636487/files/data.zip/content",
+    "size_bytes": 10325344888,
+    "checksum": "md5:0250c27661f3e1f12dc29a8bd7e5c53b",
+    "images": "request_from_corresponding_author",
+    "download_status": "not_downloaded_images_unavailable"
+  }
+}
