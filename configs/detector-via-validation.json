@@ -1,0 +1,1 @@
+{"dataset": "blueberrydcm-via-yolo", "experiment": "blueberry-via", "weights": "/models/blueberry-via/weights/best.pt", "image_size": 640}

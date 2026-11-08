@@ -22,6 +22,14 @@ DCM_URL = "https://zenodo.org/api/records/14002517/files/BlueberryDCM.7z/content
 DCM_MD5 = "77fc808520dbe7751cb367dbd06ea32f"
 
 
+def verify_manifest_files(root: Path, entries: list[dict]) -> None:
+    """Fail closed when a cached file differs from its previously recorded digest."""
+    for entry in entries:
+        path = safe_archive_path(root, entry["path"])
+        if not path.is_file() or file_digest(path) != entry["sha256"]:
+            raise ValueError(f"Cached data integrity failure: {path}; use a fresh data root")
+
+
 class ArrayUnpickler(pickle.Unpickler):
     """Allow only numpy array serialization primitives, never arbitrary globals.
 
@@ -52,6 +60,10 @@ def stream_butom_rgb(raw: Path, sequences: tuple[str, ...] = ("235", "205")) -> 
     """
     expected = set(sequences)
     if all(len(list((raw / "rgb" / seq).glob("*.png"))) == 83 for seq in sequences):
+        manifest = raw / "rgb_subset_manifest.json"
+        if not manifest.exists():
+            raise ValueError("Cached RGB is missing its integrity manifest; use a fresh data root")
+        verify_manifest_files(raw, json.loads(manifest.read_text())["files"])
         return
     curl = shutil.which("curl.exe") or shutil.which("curl")
     if curl is None:
@@ -206,12 +218,26 @@ def prepare_blueberrydcm(root: Path = Path("data")) -> Path:
     raw = root / "raw" / "blueberrydcm"
     archive = download(DCM_URL, raw / "BlueberryDCM.7z", "md5:" + DCM_MD5, 108_000_000)
     destination = root / "processed" / "blueberrydcm"
-    if not list(destination.rglob("*.jpg")):
-        extract_archive(archive, destination, 500_000_000)
+    manifest_path = destination / "manifest.json"
+    if manifest_path.exists():
+        previous = json.loads(manifest_path.read_text())
+        if "files" in previous:
+            verify_manifest_files(destination, previous["files"])
+            return destination
+        verify_manifest_files(destination, previous["images"])
+    # Re-extract legacy caches from the verified archive so annotations are not
+    # silently trusted when upgrading to an all-files manifest.
+    extract_archive(archive, destination, 500_000_000)
     images = sorted(destination.rglob("*.jpg"))
     if len(images) != 140:
         raise ValueError(f"Expected140 BlueberryDCM images, found {len(images)}")
-    (destination / "manifest.json").write_text(
+    import py7zr
+
+    with py7zr.SevenZipFile(archive) as source_archive:
+        publisher_files = [
+            safe_archive_path(destination, name) for name in source_archive.getnames()
+        ]
+    manifest_path.write_text(
         json.dumps(
             {
                 "dataset": "BlueberryDCM",
@@ -224,6 +250,12 @@ def prepare_blueberrydcm(root: Path = Path("data")) -> Path:
                 "annotation_kind": "human_detection",
                 "image_count": len(images),
                 "classes": ["Unblue_visible", "Unblue_occluded", "Blue_visible", "Blue_occluded"],
+                "class_note": "Publisher TXT uses only0/3; use VIA-derived labels for four classes",
+                "files": [
+                    {"path": str(p.relative_to(destination)), "sha256": file_digest(p)}
+                    for p in publisher_files
+                    if p.is_file()
+                ],
                 "images": [
                     {"path": str(p.relative_to(destination)), "sha256": file_digest(p)}
                     for p in images
