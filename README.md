@@ -9,7 +9,7 @@ BerryTrack is an executable research implementation with detector-independent
 baselines, validated MOT metrics, a local video application and bounded GPU jobs.
 
 **Research question:** can adaptive appearance, camera compensation and local
-geometry improve identity association and counting at lower computational cost?
+geometry improve identity association and counting?
 The initial evidence is mixed. No novelty, superiority or validated blueberry
 tracking accuracy is claimed.
 
@@ -21,6 +21,14 @@ tracking accuracy is claimed.
 default. [Controlled results](docs/rigidity-results.md) include improvements,
 regressions and a failed stationary-pixel prior. [Real blueberry frames and
 explicitly assistant-reviewed labels](docs/agrivision.md) are now reproducible.
+
+[![BerryTrack tracking real blueberry frames](docs/assets/blueberry-demo.gif)](docs/assets/blueberry-demo.mp4)
+
+**BerryTrack on real blueberry frames.** Persistent IDs on an AgriVision crop,
+using assistant-authored reference boxes with their identities removed before
+tracking. This is a software demo, not detector accuracy or a comparison claim.
+[Watch the MP4](docs/assets/blueberry-demo.mp4) ·
+[Source, labels and reproduction](docs/agrivision.md).
 
 ## What runs today
 
@@ -92,10 +100,8 @@ compatible recordings.
 
 ## Video application
 
-![Reference-box video comparison](docs/assets/tracking-demo.gif)
-
-This rendered real-sequence demo uses reference boxes and includes remaining
-identity errors. [Source attribution and processing](docs/assets/README.md).
+The blueberry GIF above shows BerryTrack only.
+[Source attribution and processing](docs/assets/README.md).
 
 ```powershell
 uv run berrytrack demo
@@ -103,23 +109,23 @@ uv run berrytrack demo
 
 Open [the local app](http://127.0.0.1:7860). Upload an agricultural video, choose a
 tracker and comparison, and supply adapted detector weights. It runs locally on
-CPU and never starts paid cloud instances. Generic COCO weights are unreliable for
+CPU. Generic COCO weights are unreliable for
 blueberries. Ripeness/visibility labels collapse to one physical-fruit tracking
 class so classifier changes cannot force new identities.
 
 [Application controls, exports and verification](docs/demo.md).
 
-Generate a working reference demo from the licensed real sequence:
+Recreate the single-tracker blueberry GIF from the prepared AgriVision reference:
 
 ```powershell
-uv run scripts/make_demo_video.py
-uv run berrytrack track artifacts/demo/input.mp4 --detections artifacts/association/cache/butom-st21-235.txt --gt data/processed/butom-st21-235/gt/gt.txt --compare botsort --output artifacts/demo/comparison --max-frames 63
+uv run scripts/make_blueberry_demo.py --sequence data/processed/agrivision-assistant-reference-reproduced
 ```
 
-In the UI, upload that video and the same cache/GT under the advanced section.
-Reference detections bypass the detector. Video compression changes pixels;
-exact benchmark reproduction uses the original converted JPEG frames. Generated
-videos, datasets and weights stay outside Git.
+Prepare the reference with [the AgriVision workflow](docs/agrivision.md).
+The renderer runs BerryTrack on reference boxes with IDs removed and uses its
+actual predicted boxes and IDs. All eight frames are retained, including initial
+track confirmation. Playback is4FPS; source capture FPS is unknown. Downloaded
+datasets and model weights stay outside Git.
 
 Normal inference and optional appearance alternatives:
 
@@ -223,12 +229,7 @@ crops by 43.6% and paired warm latency from 27.63 to 23.39ms, while count MAE
 worsened from 2 to 4. H1–H4 remain unproven.
 [Full analysis and dimensions](docs/evaluation.md).
 
-![Executed comparison](results/diagnostic/comparison.png)
-
-![Measured identity-switch failures](docs/assets/identity-switches.png)
-
-Source-image derivatives are CC-BY-4.0 with [attribution](docs/assets/README.md).
-They show measured failures, not guaranteed performance.
+[Executed diagnostic plots and failure analysis](docs/evaluation.md).
 
 **Actual detections, cross-crop transfer:** on the same tomato clip, the
 blueberry detector gives BerryTrack HOTA 26.69 versus BoT-SORT 27.13, ByteTrack
@@ -287,7 +288,7 @@ The downloader obtains selected contiguous frames by HTTP ranges; the original
 unknown;10FPS is an explicit playback choice. Inferred masks and authored labels
 retain distinct provenance. [Details and limits](docs/agrivision.md).
 
-## GPU training and budget
+## GPU training
 
 ```powershell
 $env:PYTHONUTF8 = "1"
@@ -303,13 +304,7 @@ and detector training/validation. The 64D encoder has 27,744 parameters. Four na
 Volumes persist data, checkpoints, features and artifacts. No GPU endpoint is
 deployed. CPU preprocessing is separate from GPU allocation.
 
-The initial hard budget is **US$30**. Conservative cumulative reservations are
-**US$2.30131**, including failed build/startup attempts. Successful runtime-only
-estimates sum to approximately **US$0.07902**, excluding builds/startup. These are
-different accounting scopes, not invoices. Provider metering is delayed:
-[run records](results/cloud/runs.json), [billing snapshot](results/cloud/provider-billing.json),
-[budget controls](docs/modal.md). The launcher is not a provider-wide billing cap;
-executed jobs remain far below the allowance.
+[Execution records](results/cloud/runs.json) · [Training workflow](docs/modal.md).
 
 ## Reproducibility and remaining research
 
