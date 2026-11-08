@@ -1,17 +1,33 @@
 # Real blueberry video and explicit reference labels
 
 The README's [GIF](assets/blueberry-demo.gif) and [MP4](assets/blueberry-demo.mp4)
-show BerryTrack alone on the reference crop. After preparing the sequence, run:
+show BerryTrack alone on **160 consecutive frames** from camera 1, video 104.
+The camera moves through a real blueberry canopy; colored trails retain the last
+48 observed frame positions for each visible identity. Reproduce with:
 
 ```powershell
-uv run scripts/make_blueberry_demo.py --sequence data/processed/agrivision-assistant-reference-reproduced
+uv run scripts/prepare_blueberry_demo.py
+uv run scripts/make_blueberry_demo.py
 ```
 
-The renderer removes reference IDs before tracking, retains all eight frames,
-and exports its configuration and source hashes in a [manifest](assets/blueberry-demo.json).
-It uses4FPS for presentation; original capture FPS is unknown. Reference boxes are
-assistant-authored, so the GIF demonstrates software execution rather than detector
-quality or comparative accuracy.
+Preparation joins four contiguous 40-frame ranges from the same recording, with
+per-image/mask checksums and source indices. The renderer converts the publisher's
+binary inferred masks into connected-component boxes, then runs the default
+BerryTrack configuration. Components outside 80–30,000 source pixels are omitted.
+Every proposal receives a uniform association score 1, which is not a calibrated
+detector confidence. No temporal IDs or reference boxes enter this demo.
+
+The full MP4 retains all 160 original frames at 10 FPS. The GIF samples every second
+frame at 5 FPS, retaining the same 16-second playback duration. Original capture FPS
+is unknown. There is no artificial panning, zoom or frame interpolation. Traces
+come from actual tracker outputs and break after a missing observation; they do
+not fill in unobserved paths. The [manifest](assets/blueberry-demo.json) records
+source hashes, full settings, active-track counts and observed track displacement.
+
+This is a qualitative association demonstration. Publisher-inferred masks can
+miss fruit or merge touching fruit into one proposal, and tracker identities can
+still break. Active tracks are not a verified physical-fruit count. The small,
+assistant-authored eight-frame reference below remains a separate experiment.
 
 Source: [AgriVision DB-2 v1](https://doi.org/10.6084/m9.figshare.29222462.v1),
 [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12748667/).
