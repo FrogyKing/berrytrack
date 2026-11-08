@@ -56,6 +56,7 @@ addopts = "-ra"
 markers = ["integration: CPU pipeline integration", "gpu: requires a CUDA device"]
 
 [tool.mypy]
+plugins = ["pydantic.mypy"]
 python_version = "3.12"
 ignore_missing_imports = true
 check_untyped_defs = true
