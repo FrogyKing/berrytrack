@@ -1,0 +1,63 @@
+[project]
+name = "berrytrack"
+version = "0.1.0"
+description = "Geometry-aware multi-object tracking for dense agricultural scenes"
+readme = "README.md"
+authors = [
+    { name = "Luis Gonzalez", email = "luisgonzalezalvarez991@gmail.com" }
+]
+requires-python = ">=3.12,<3.14"
+license = "AGPL-3.0-or-later"
+dependencies = [
+    "deep-sort-realtime>=1.3.2",
+    "gradio>=6.31.0",
+    "lap>=0.5.14",
+    "modal>=1.6.3",
+    "numpy>=2.5.4",
+    "pillow>=12.3.0",
+    "py7zr>=1.1.4",
+    "pydantic>=2.14.3",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "scipy>=1.18.1",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+    "trackeval>=1.3.0",
+    "typer>=0.28.0",
+    "ultralytics>=8.4.207",
+]
+
+[project.scripts]
+berrytrack = "berrytrack.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.17.4",
+    "types-pyyaml>=6.0.12.20261103",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["integration: CPU pipeline integration", "gpu: requires a CUDA device"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+files = ["src/berrytrack"]
