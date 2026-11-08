@@ -6,7 +6,7 @@ independently of this repository's software license.
 
 | Dataset | Access and license | Annotation meaning | Use in BerryTrack |
 |---|---|---|---|
-| [AgriVision](https://www.nature.com/articles/s41597-025-06263-3), [Figshare shared record](https://figshare.com/s/8f843d7b91a4711210dc) | Shared link accessible; 88.1GB total; Figshare displays CC BY. Article license differs; do not infer data terms from article license. | DB-1: 1,195 manually masked keyframes. DB-2: 141,453 frames from 520 recordings with automatically inferred masks. DB-3: synthetic images. Persistent cross-frame fruit IDs are **not established** by these masks. | Large download deferred. Real blueberry MOT evaluation requires human identity annotation. Keep DB-1 and DB-2 from the same recording in the same split. |
+| [AgriVision](https://www.nature.com/articles/s41597-025-06263-3), [Figshare v1](https://doi.org/10.6084/m9.figshare.29222462.v1) | CC-BY-4.0 per source metadata. DB-2 archive78GB; bounded subsets obtained by HTTP ranges. Article license differs. | DB-1:1,195 manual keyframes. DB-2:141,453 frames/520 recordings with inferred masks, not established persistent IDs. | Real contiguous blueberry frames reconstructed; tiny assistant-reviewed reference separately labeled. Keep recordings together in splits. [Workflow](agrivision.md). |
 | [BlueberryDCM v1](https://zenodo.org/records/14002517) | Public, **CC-BY-NC-4.0** (verified API). `BlueberryDCM.7z`, 107,267,412 bytes. | 140 static images; VIA JSON, VOC XML and YOLO TXT boxes. Four classes distinguish ripe/unripe and visible/occluded. No temporal identities. | Fully downloaded, publisher MD5 checked, extracted and loader checked. Detection and occlusion research; never turn image box indices into tracking GT. |
 | [BUTom-ST21 v1](https://doi.org/10.60507/FK2/TTPCNV), [author tools](https://github.com/Agricultural-Robotics-Bonn/BUTom21-ST21) | Public, CC-BY-4.0. RGB split across seven large archive parts; annotations separate. | Real mobile-robot RGB; PAg-NeRF supplies weak train/validation labels. Official evaluation annotations are hand corrected and have consistent IDs. 83 RGB frames per sequence, **63 annotated**; omit 10 warm-up frames at either end. | Sequences 235 and 205 ingested with human-corrected annotations. These are official evaluation sequences; any use of 205 for exploratory training changes the protocol and must be disclosed. |
 | [NeSTCount v1](https://zenodo.org/records/21636487) | CC-BY-4.0; 10,325,344,888-byte archive. Record explicitly says original images require contacting authors. | Global-ID MOT GT and metadata for eight sequences, four species. | No images fabricated or requested automatically. Not downloaded; image-dependent experiments pending access. |
@@ -102,5 +102,6 @@ stale training files cannot silently defeat the declared split size.
    It writes MOT and provenance sidecar. Archive the original human task.
 
 Tracker suggestions may accelerate annotation but remain **pseudo-labels** until
-human review. No verified blueberry identity set was created during implementation;
-that scientific task remains pending and is never represented by simulated labels.
+human review. A later extension adds a tiny assistant-visually-reviewed blueberry
+reference, explicitly without human verification; see [its scope](agrivision.md).
+A genuinely independent human-verified blueberry tracking benchmark remains pending.
