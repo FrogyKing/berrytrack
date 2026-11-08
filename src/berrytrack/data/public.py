@@ -252,7 +252,7 @@ def prepare_blueberrydcm(root: Path = Path("data")) -> Path:
                 "classes": ["Unblue_visible", "Unblue_occluded", "Blue_visible", "Blue_occluded"],
                 "class_note": "Publisher TXT uses only0/3; use VIA-derived labels for four classes",
                 "files": [
-                    {"path": str(p.relative_to(destination)), "sha256": file_digest(p)}
+                    {"path": str(p.relative_to(destination.resolve())), "sha256": file_digest(p)}
                     for p in publisher_files
                     if p.is_file()
                 ],

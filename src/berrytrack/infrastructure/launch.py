@@ -1,5 +1,6 @@
 """Reserve worst-case spend before building/running any cloud application."""
 
+import hashlib
 import json
 import os
 import shutil
@@ -27,14 +28,30 @@ def launch(kind: str, options: dict, gpu: str = "T4", seconds: int = 300) -> dic
         ignore=shutil.ignore_patterns("__pycache__"),
     )
     os.environ["BERRYTRACK_SOURCE"] = str((snapshot / "berrytrack").resolve())
+    destination = Path("artifacts/modal") / run["run_id"]
+    destination.mkdir(parents=True, exist_ok=True)
+    manifest = {
+        "reservation": run,
+        "options": options,
+        "uv_lock_sha256": hashlib.sha256(Path("uv.lock").read_bytes()).hexdigest(),
+        "source_sha256": {
+            str(p.relative_to(snapshot)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(snapshot.rglob("*.py"))
+        },
+    }
+    (destination / "request.json").write_text(json.dumps(manifest, indent=2))
     import modal
 
     from berrytrack.infrastructure.modal_app import app, gpu_job
 
-    with modal.enable_output(), app.run():
-        result = gpu_job.remote(kind, run, options)
-    destination = Path("artifacts/modal") / run["run_id"]
-    destination.mkdir(parents=True, exist_ok=True)
+    try:
+        with modal.enable_output(), app.run():
+            result = gpu_job.remote(kind, run, options)
+    except Exception as error:
+        (destination / "failure.json").write_text(
+            json.dumps({"error": str(error), "run_id": run["run_id"]}, indent=2)
+        )
+        raise
     (destination / "result.json").write_text(json.dumps(result, indent=2))
     print(json.dumps(result, indent=2))
     return result
