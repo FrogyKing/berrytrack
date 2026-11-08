@@ -84,6 +84,11 @@ ABLATIONS: dict[str, dict[str, Any]] = {
     ),
 }
 
+# Preserve the original ladder's meaning: each historical component was tested
+# before the quasi-static/polygon extension existed.
+for _settings in ABLATIONS.values():
+    _settings.update(local_rigidity=False, static_scene=False)
+
 
 def sha256(path: Path) -> str:
     with path.open("rb") as handle:
@@ -211,6 +216,8 @@ def run_sequence(
         "model_parameter_count": 0,
         "approximate_gpu_cost_usd": 0.0,
         "appearance_crops": appearance_crops,
+        "rigidity_fits": getattr(tracker, "rigidity_fits", 0),
+        "rigidity_anchor_count": getattr(tracker, "rigidity_anchor_count", 0),
         "metrics": metrics,
         "prediction_sha256": sha256(output),
     }
@@ -356,6 +363,7 @@ def benchmark(
     seeds: list[int] | None = None,
     algorithms: list[str] | None = None,
     dimensions: list[int] | None = None,
+    legacy: bool = False,
 ) -> dict[str, Any]:
     """Run a serial, CPU-only benchmark; no GPU calls or fabricated detections."""
     seeds = seeds or [42]
@@ -387,7 +395,15 @@ def benchmark(
         )
         for seed in seeds:
             variants: list[tuple[str, TrackerConfig]] = [
-                (algorithm, TrackerConfig(algorithm=algorithm, seed=seed))
+                (
+                    algorithm,
+                    TrackerConfig(
+                        algorithm=algorithm,
+                        seed=seed,
+                        local_rigidity=not legacy,
+                        static_scene=False,
+                    ),
+                )
                 for algorithm in algorithms
             ]
             if ablations:
@@ -397,7 +413,15 @@ def benchmark(
                 ]
             if dimensions:
                 variants += [
-                    (f"embedding_{dim}", TrackerConfig(seed=seed, embedding_dim=dim))
+                    (
+                        f"embedding_{dim}",
+                        TrackerConfig(
+                            seed=seed,
+                            embedding_dim=dim,
+                            local_rigidity=not legacy,
+                            static_scene=False,
+                        ),
+                    )
                     for dim in dimensions
                 ]
             for name, config in variants:
@@ -418,6 +442,7 @@ def benchmark(
     metadata = {
         "executed_at": datetime.now(UTC).isoformat(),
         "oracle_detections": oracle,
+        "legacy_association": legacy,
         "interpretation": (
             "Oracle boxes from human-corrected tracking GT; IDs removed from tracker input. "
             "This isolates association on an accessible tomato development subset, and is "
@@ -455,6 +480,9 @@ def main() -> None:
         help="Use GT boxes with identities discarded; association diagnostic only",
     )
     parser.add_argument("--ablations", action="store_true")
+    parser.add_argument(
+        "--legacy", action="store_true", help="Reproduce pre-polygon BerryTrack settings"
+    )
     parser.add_argument("--seeds", type=int, nargs="+", default=[42])
     parser.add_argument(
         "--algorithms", nargs="+", choices=["bytetrack", "botsort", "deepsort", "berrytrack"]
@@ -469,6 +497,7 @@ def main() -> None:
         args.seeds,
         args.algorithms,
         args.dimensions,
+        args.legacy,
     )
 
 

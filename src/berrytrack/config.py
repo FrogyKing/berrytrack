@@ -23,6 +23,11 @@ class TrackerConfig(BaseModel):
     context: bool = True
     adaptive: bool = True
     uncertainty_trigger: bool = True
+    static_scene: bool = False
+    local_rigidity: bool = True
+    rigidity_weight: float = Field(0.35, ge=0, le=1)
+    rigidity_neighbors: int = Field(6, ge=3, le=16)
+    rigidity_gate: float = Field(4.0, gt=1)
     neighbor_k: int = Field(4, ge=1, le=16)
     gate_distance: float = Field(6.0, gt=0)
     ambiguity_margin: float = Field(0.12, ge=0, le=1)
