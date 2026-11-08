@@ -1,5 +1,15 @@
 # Visual asset attribution
 
+`agrivision-reference.jpg` shows eight real AgriVision DB-2 crops with56 boxes
+and7 identities authored by assistant visual inspection. This is a tiny,
+near-stationary exploratory reference, not human-verified or independent GT.
+Source: [AgriVision v1](https://doi.org/10.6084/m9.figshare.29222462.v1).
+Authors: Muhammad Owais, Muhammad Shafay, Muhammad Zubair, Shamal Mohammed,
+Lakmal Seneviratne and Irfan Hussain. License: CC-BY-4.0 per dataset metadata.
+Modifications: cropped source frames1–8, added identity boxes/frame labels,
+and assembled a contact sheet. No endorsement by the source authors is implied.
+The article has separate licensing; the source dataset's license is used here.
+
 `tracking-demo.gif` is a three-second, reduced-resolution derivative of the real
 BUTom-ST21 sequence235 demo. It displays BerryTrack and BoT-SORT outputs side by
 side from identical reference detections, with persistent IDs, trajectories and

@@ -1,5 +1,11 @@
 # Evaluation protocol
 
+The main table in this document records the original pre-polygon implementation.
+Use `--legacy` to reproduce it. The current default and the explicitly preserved
+failed stationary-pixel prior are compared in [the polygon experiment](rigidity-results.md).
+The tiny blueberry execution reference is assistant-reviewed and is not an
+independent human-verified benchmark.
+
 BerryTrack calls the installed [TrackEval](https://github.com/JonathonLuiten/TrackEval)
 implementation of HOTA, CLEAR and Identity. HOTA, DetA and AssA average the 19 IoU
 thresholds from 0.05 through 0.95. CLEAR and Identity use 0.5 IoU. Percentage metrics

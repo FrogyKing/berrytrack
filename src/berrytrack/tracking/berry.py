@@ -9,6 +9,7 @@ from berrytrack.config import TrackerConfig
 from berrytrack.embeddings.appearance import CropAppearance
 from berrytrack.geometry.boxes import centers, neighborhood_context, pairwise_iou
 from berrytrack.geometry.camera import CameraEstimate, CameraMotion
+from berrytrack.geometry.rigidity import refine_polygon_cost
 from berrytrack.tracking.kalman import BoxKalman
 from berrytrack.types import Detections, FloatArray, Image, TrackOutput
 
@@ -41,6 +42,8 @@ class BerryTracker:
         self.last_camera = CameraEstimate()
         self.last_weights = np.empty((0, 4), np.float32)
         self.appearance_crops = 0
+        self.rigidity_fits = 0
+        self.rigidity_anchor_count = 0
 
     @property
     def unique_count(self) -> int:
@@ -49,13 +52,21 @@ class BerryTracker:
     def update(self, detections: Detections, frame: Image | None = None) -> list[TrackOutput]:
         cfg = self.config
         assert detections.class_ids is not None
+        previous_boxes = (
+            np.stack([t.filter.bbox for t in self.identities])
+            if self.identities
+            else np.empty((0, 4), np.float32)
+        )
         self.last_camera = (
             self.camera.estimate(frame, detections.boxes)
             if cfg.camera_compensation and frame is not None
             else CameraEstimate()
         )
         for track in self.identities:
-            track.filter.predict(self.last_camera.matrix if self.last_camera.reliability else None)
+            track.filter.predict(
+                self.last_camera.matrix if self.last_camera.reliability else None,
+                static_scene=cfg.static_scene and self.last_camera.reliability >= 0.5,
+            )
             track.missed += 1
         context = neighborhood_context(detections.boxes, cfg.neighbor_k)
         features: list[FloatArray | None] = [None] * len(detections)
@@ -143,6 +154,51 @@ class BerryTracker:
             # High-confidence stage followed by low-confidence recovery, no low-score births.
             high = detections.scores >= cfg.high_threshold
             matches = gated_assignment(cost, gate & high[None], cfg.match_threshold)
+            if cfg.local_rigidity:
+                overlap = pairwise_iou(boxes, detections.boxes)
+                anchors = []
+                for i, j in matches:
+                    # Use mutually best, active, geometrically plausible identities.
+                    # Ambiguous assignments may be corrected; they never define the frame.
+                    admissible = np.where(gate[i] & high, cost[i], np.inf)
+                    ordered = np.sort(admissible[np.isfinite(admissible)])
+                    margin = ordered[1] - ordered[0] if len(ordered) > 1 else 1.0
+                    best_column = np.argmin(np.where(gate[:, j], cost[:, j], np.inf))
+                    if (
+                        self.identities[i].confirmed
+                        and self.identities[i].missed == 1
+                        and cost[i, j] < cfg.match_threshold * 0.7
+                        and overlap[i, j] > 0.3
+                        and margin >= 0.04
+                        and best_column == i
+                    ):
+                        anchors.append((i, j))
+                refined = refine_polygon_cost(
+                    previous_boxes,
+                    detections.boxes,
+                    cost,
+                    gate,
+                    anchors,
+                    prior=self.last_camera.matrix if self.last_camera.reliability else None,
+                    neighbors=cfg.rigidity_neighbors,
+                    weight=cfg.rigidity_weight,
+                    gate_sigma=cfg.rigidity_gate,
+                    recovery_eligible=np.array(
+                        [
+                            (detections.class_ids == t.class_id) & (t.missed <= cfg.max_age)
+                            for t in self.identities
+                        ]
+                    ),
+                )
+                cost, gate = refined.cost, refined.gate
+                self.rigidity_fits += int((refined.reliability > 0).sum())
+                self.rigidity_anchor_count += len(anchors)
+                matches = gated_assignment(cost, gate & high[None], cfg.match_threshold)
+                # Carry supported local scene motion into temporarily hidden states.
+                if cfg.static_scene:
+                    for i, track in enumerate(self.identities):
+                        if track.missed > 1 and refined.reliability[i] >= 0.65:
+                            track.filter.mean[:2] = refined.predictions[i]
             used_i = {i for i, _ in matches}
             used_j = {j for _, j in matches}
             low_gate = gate & ((detections.scores >= cfg.low_threshold) & ~high)[None]

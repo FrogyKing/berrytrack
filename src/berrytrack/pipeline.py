@@ -62,7 +62,16 @@ def process_video(
             if isinstance(tracker, BerryTracker):
                 tracker.appearance = TorchAppearance(appearance_checkpoint)
     renderers = [TrackRenderer() for _ in configs]
-    stats = [RunStatistics(metadata={"algorithm": c.algorithm, "device": "cpu"}) for c in configs]
+    stats = [
+        RunStatistics(
+            metadata={
+                "algorithm": c.algorithm,
+                "device": "cpu",
+                "tracker_config": c.model_dump(),
+            }
+        )
+        for c in configs
+    ]
     seen: list[set[int]] = [set() for _ in configs]
     mot_rows: list[list[list[float]]] = [[] for _ in configs]
     raw_video = output / "render.mp4"

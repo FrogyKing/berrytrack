@@ -1,0 +1,95 @@
+{
+  "status": "exercised",
+  "rigidity_enabled_runs": 12,
+  "runs_with_supported_fits": 12,
+  "runs_missing_measurement": 0,
+  "total_supported_fits": 23673,
+  "total_anchor_correspondences": 16978,
+  "interpretation": "Fits count supported track-level local maps across frames; anchors count cumulative correspondences, not unique identities. Execution does not imply benefit.",
+  "runs": [
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 42,
+      "supported_fits": 1650,
+      "anchor_correspondences": 1623
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 42,
+      "supported_fits": 2041,
+      "anchor_correspondences": 1543
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 43,
+      "supported_fits": 1656,
+      "anchor_correspondences": 1620
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 43,
+      "supported_fits": 2041,
+      "anchor_correspondences": 1543
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 44,
+      "supported_fits": 1652,
+      "anchor_correspondences": 1624
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 44,
+      "supported_fits": 2037,
+      "anchor_correspondences": 1544
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "rigidity",
+      "seed": 42,
+      "supported_fits": 1448,
+      "anchor_correspondences": 1520
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "static_rigidity",
+      "seed": 42,
+      "supported_fits": 2797,
+      "anchor_correspondences": 975
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "rigidity",
+      "seed": 43,
+      "supported_fits": 1448,
+      "anchor_correspondences": 1520
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "static_rigidity",
+      "seed": 43,
+      "supported_fits": 2760,
+      "anchor_correspondences": 975
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "rigidity",
+      "seed": 44,
+      "supported_fits": 1448,
+      "anchor_correspondences": 1520
+    },
+    {
+      "sequence": "butom-st21-205",
+      "variant": "static_rigidity",
+      "seed": 44,
+      "supported_fits": 2695,
+      "anchor_correspondences": 971
+    }
+  ]
+}

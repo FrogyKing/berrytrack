@@ -17,11 +17,18 @@ tracking accuracy is claimed.
 [Evaluation](docs/evaluation.md) · [Modal guide](docs/modal.md) ·
 [Executed results](results/diagnostic/report.md)
 
+**Update:** local deformable-polygon association is implemented and enabled by
+default. [Controlled results](docs/rigidity-results.md) include improvements,
+regressions and a failed stationary-pixel prior. [Real blueberry frames and
+explicitly assistant-reviewed labels](docs/agrivision.md) are now reproducible.
+
 ## What runs today
 
 - Custom BerryTrack: box Kalman filtering, robust affine camera compensation,
   sparse neighborhood descriptors, adaptive costs, gated assignment, lazy
   appearance and persistent identity memory.
+- Local polygons built from reliable neighbor identities: smooth affine
+  deformation, robust fitting, ambiguity penalties and supported motion-gate recovery.
 - Actual upstream ByteTrack, BoT-SORT and DeepSORT using identical cached detections.
 - 32/64/128-dimensional compact descriptors; a trainable PyTorch encoder;
   optional ROI-pooled detector features and sparse graph attention.
@@ -133,7 +140,7 @@ flowchart LR
     V[Video / sequence] --> D[Detector or immutable cache]
     V --> C[Validated camera motion]
     D --> E[Lazy crops / cached backbone features]
-    D --> G[Sparse local neighborhood]
+    D --> G[Sparse neighbors + local polygon fit]
     M[Identity memory + Kalman covariance] --> A[Adaptive gated costs]
     C --> A
     E --> A
@@ -144,10 +151,12 @@ flowchart LR
     O --> Q[TrackEval + reproducibility artifacts]
 ```
 
-$$C(i,j)=\alpha_{ij}D_{\mathrm{appearance}}+
+$$
+C(i,j)=\alpha_{ij}D_{\mathrm{appearance}}+
 \beta_{ij}D_{\mathrm{motion}}+
 \gamma_{ij}D_{\mathrm{geometry}}+
-\delta_{ij}D_{\mathrm{context}}.$$
+\delta_{ij}D_{\mathrm{context}}.
+$$
 
 Terms lie in $[0,1]$. Coefficients form a simplex and adapt to available appearance,
 track uncertainty, camera support and neighborhood occupancy. Missing terms are
@@ -159,7 +168,29 @@ homography fits a non-planar canopy. The neighborhood graph is sparse; current
 pair costs and Hungarian assignment are dense. See the
 [derivations, assumptions and complexity](docs/research.md).
 
-## Executed results
+## Current polygon comparison
+
+Fixed-weight local geometry gives the following three-seed mean HOTA on two
+human-corrected tomato development sequences, using identical reference boxes:
+
+| Sequence | Legacy | Local polygons (default) | BoT-SORT |
+|---|---:|---:|---:|
+| BUTom235 | 83.65 | 84.17 | 82.44 |
+| BUTom205 | 89.92 | 89.85 | 86.22 |
+
+On235, mean identity switches decrease from31.67 to19; final-count MAE remains4.
+On205 there is a slight HOTA regression and count MAE remains1. With actual
+transferred-detector outputs on235, HOTA stays26.69. Results are mixed and do not
+establish superiority. Residual image-velocity damping performs badly and is
+disabled by default; world stationarity does not imply stationary pixels.
+[Full comparison, negative results and timing caveats](docs/rigidity-results.md).
+
+## Historical executed results
+
+The tables below preserve the **original, pre-polygon implementation**. Add
+`--legacy` to the association command to reproduce those settings. The updated
+tracker enables deformable-polygon consistency by default; the optional residual
+velocity damping remains off. Updated controlled comparisons are recorded separately.
 
 **Oracle-box diagnostic: BUTom235, one tomato clip, three descriptor seeds
 (42/43/44).** Metrics are percentages. Warm timing excludes the first five online
@@ -216,7 +247,7 @@ four-class conclusions.
 
 | Dataset | License / access | Temporal identities |
 |---|---|---|
-| [AgriVision blueberries](https://www.nature.com/articles/s41597-025-06263-3) | Figshare displays CC BY; 88GB download deferred | Masks do not establish persistent IDs |
+| [AgriVision blueberries](https://doi.org/10.6084/m9.figshare.29222462.v1) | CC-BY-4.0; bounded real-video subsets downloaded | Inferred masks lack persistent IDs; tiny assistant-reviewed ROI added |
 | [BlueberryDCM](https://zenodo.org/records/14002517) | CC-BY-NC-4.0; downloaded and checked | Static images only |
 | [BUTom-ST21](https://doi.org/10.60507/FK2/TTPCNV) | CC-BY-4.0; two real RGB/hand-corrected subsets | Consistent original IDs preserved |
 | [NeSTCount](https://zenodo.org/records/21636487) | CC-BY-4.0; original images on request | ID annotations available; images pending |
@@ -235,7 +266,26 @@ uv run berrytrack export-annotations task.json gt.txt
 ```
 
 The exporter rejects pending/pseudo labels, missing reviewers and incomplete
-coverage. No verified blueberry identity set was fabricated.
+coverage. A new8-frame/7-ID reference is explicitly labeled assistant visual
+review, without human verification. It is an easy execution check, not independent
+tracking GT. No human-verified blueberry benchmark is claimed.
+
+Reconstruct real blueberry video and reproduce the visual-reference labels:
+
+![Assistant-reviewed blueberry crop reference](docs/assets/agrivision-reference.jpg)
+
+These are real blueberry frames, with assistant-authored labels and no independent
+human verification. [Attribution and modifications](docs/assets/README.md).
+
+```powershell
+uv run scripts/prepare_agrivision.py --output data/processed/agrivision-new --reference-output data/processed/agrivision-reference-new
+uv run python experiments/blueberry.py --sequence data/processed/agrivision-reference-new --output artifacts/blueberry-reference
+```
+
+The downloader obtains selected contiguous frames by HTTP ranges; the original
+24-frame subset required54.3MB rather than the78GB archive. Source capture FPS is
+unknown;10FPS is an explicit playback choice. Inferred masks and authored labels
+retain distinct provenance. [Details and limits](docs/agrivision.md).
 
 ## GPU training and budget
 

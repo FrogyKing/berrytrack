@@ -1,0 +1,53 @@
+{
+  "status": "exercised",
+  "rigidity_enabled_runs": 6,
+  "runs_with_supported_fits": 6,
+  "runs_missing_measurement": 0,
+  "total_supported_fits": 45,
+  "total_anchor_correspondences": 879,
+  "interpretation": "Fits count supported track-level local maps across frames; anchors count cumulative correspondences, not unique identities. Execution does not imply benefit.",
+  "runs": [
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 42,
+      "supported_fits": 9,
+      "anchor_correspondences": 149
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 42,
+      "supported_fits": 6,
+      "anchor_correspondences": 144
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 43,
+      "supported_fits": 9,
+      "anchor_correspondences": 149
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 43,
+      "supported_fits": 6,
+      "anchor_correspondences": 144
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "rigidity",
+      "seed": 44,
+      "supported_fits": 9,
+      "anchor_correspondences": 149
+    },
+    {
+      "sequence": "butom-st21-235",
+      "variant": "static_rigidity",
+      "seed": 44,
+      "supported_fits": 6,
+      "anchor_correspondences": 144
+    }
+  ]
+}
